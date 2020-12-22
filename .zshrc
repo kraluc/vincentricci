@@ -11,7 +11,7 @@ export PATH=/usr/bin/java:$PATH
 export PATH="/usr/local/sbin:/Users/vincentricci/Library/Python/2.7/bin:$PATH"
 
 ## Environment Variables
-# - NVM - 
+# - NVM -
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
@@ -85,7 +85,12 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
+# ssh-agent plugin - see https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
 plugins=(ansible git colored-man-pages colorize pip python brew ssh-agent)
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+zstyle :omz:plugins:ssh-agent identities id_rsa
+zstyle :omz:plugins:ssh-agent lifetime 4h
 source ~/.zsh-nvm/zsh-nvm.plugin.zsh
 source $ZSH/oh-my-zsh.sh
 

@@ -11,16 +11,15 @@ export PATH=/usr/bin/java:$PATH
 export PATH="/usr/local/sbin:/Users/vincentricci/Library/Python/2.7/bin:$PATH"
 
 ## Environment Variables
-# - NVM -
+# - NVM:
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
-# - PIPENV - Ensure pipenv creates environment inside the current directory
+# - PIPENV: Ensure pipenv creates environment inside the current directory
 export PIPENV_VENV_IN_PROJECT="enabled"
-
-# Path to your oh-my-zsh installation.
+# - ZSH: Path to your oh-my-zsh installation.
 export ZSH="/Users/vincentricci/.oh-my-zsh"
-
+ 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME

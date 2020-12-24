@@ -1,11 +1,8 @@
-# vincentricci
-home directory zshell customization
+# zshell customization
 
 These files contain some customized settings that I gleaned from other people's posts.
 
-
-
-###  Custom P10k Zsh prompt when Virtual Environment is activated
+###  Custom P10k when Virtual Environment is activated
 
    *  ***Problem***: When you activate a new virtual environment, the prompt does NOT show it
    

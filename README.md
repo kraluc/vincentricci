@@ -1,6 +1,8 @@
-## zshell customization
+# zshell customization
 
-These files contain some customized settings that I gleaned from other people's posts.
+
+Customized settings I gleaned from other people's posts.
+
 
 
 ###  Custom P10k when Virtual Environment is activated
@@ -8,16 +10,17 @@ These files contain some customized settings that I gleaned from other people's 
 #### Problem
 
    *  When you activate a new virtual environment, the prompt does NOT show it   
+
 ```
 python3.9 -m venv venv
 source venv/bin/activate
 ╭─   ~/Documents/Development/DevCore/Server   master:main ?5                    14.15.3  23:44:12
-❯ deactivate
+╰─❯ deactivate
 ```
    
  #### Solution
 
-*  Per [romkatv](https://github.com/romkatv/powerlevel10k/issues/532#issuecomment-592064973):
+   *  Per [romkatv](https://github.com/romkatv/powerlevel10k/issues/532#issuecomment-592064973):
    
       1. Open ~/.p10k.zsh.
       2. Add this line to it, preferably close to the existing POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION parameter:
@@ -26,7 +29,7 @@ source venv/bin/activate
 typeset -g POWERLEVEL9K_VIRTUALENV_GENERIC_NAMES=(virtualenv venv .venv env)
 ```
 
-   *  While you are there... you can also tweak the following:
+   *  While you are there, you can also tweak the following to show the Python version and add a virtual environment icon
    
 ```bash
 typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=true
@@ -40,7 +43,7 @@ typeset -g POWERLEVEL9K_VIRTUALENV_VISUAL_IDENTIFIER_EXPANSION='⭐'
 ```
 source venv/bin/activate
 ╭─   ~/Documents/Development/DevCore/Server   master:main ?5    ⭐ 3.9.1 Server  14.15.3  23:45:37
-❯ 
+╰─❯
 ```
    *  You can check the settings with
 ```

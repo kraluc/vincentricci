@@ -7,7 +7,7 @@ Customized settings I gleaned from other people's posts.
 
 ###  Custom P10k when Virtual Environment is activated
 
-#### Problem
+#### Problem:
 
    *  When you activate a new virtual environment, the prompt does NOT show it   
 
@@ -18,7 +18,7 @@ source venv/bin/activate
 ╰─❯ deactivate
 ```
    
- #### Solution
+ #### Solution:
 
    *  Per [romkatv](https://github.com/romkatv/powerlevel10k/issues/532#issuecomment-592064973):
    

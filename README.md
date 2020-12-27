@@ -36,7 +36,7 @@ typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=true
 typeset -g POWERLEVEL9K_VIRTUALENV_VISUAL_IDENTIFIER_EXPANSION='⭐'
 ```
    
-      3. restart zsh
+      3. restart zsh (don't just source ~/.zshrc, actually restart the shell)
    
  #### Verification
  

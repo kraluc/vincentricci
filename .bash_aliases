@@ -128,3 +128,4 @@ alias wget='curl -O'
 alias wire='open -n /Applications/Wireshark.app'             # open multiple Wireshark sessions
 alias bl="brew list --formula "
 alias bs="brew search "
+alias clean="egrep -v '(#|^$)' " 

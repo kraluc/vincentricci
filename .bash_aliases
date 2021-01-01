@@ -129,3 +129,4 @@ alias wire='open -n /Applications/Wireshark.app'             # open multiple Wir
 alias bl="brew list --formula "
 alias bs="brew search "
 alias clean="egrep -v '(#|^$)' " 
+alias vag="ssh -l vagrant -i ~/.vagrant.d/vagrant_id_rsa localhost -p 2222 -o PubKeyAuthentication=yes -o StrictHostKeyChecking=no"

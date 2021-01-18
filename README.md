@@ -69,8 +69,20 @@ zsh-nvm](https://github.com/lukechilds/zsh-nvm#manually)
 
 
 ```
-if [[ ! -d "${HOME}/.zsh-nvm" ]]; then
-    git clone https://github.com/lukechilds/zsh-nvm.git ${HOME}/.zsh-nvm
+# zsh-nvm plugin - https://github.com/lukechilds/zsh-nvm
+if [[ ! -d "${HOME}/.oh-my-zsh/custom/plugins/zsh-nvm" ]]; then
+    git clone https://github.com/lukechilds/zsh-nvm.git ${HOME}/.oh-my-zsh/custom/plugins/zsh-nvm
 fi
-source ${HOME}/.zsh-nvm/zsh-nvm.plugin.zsh
+# ssh-agent plugin - see https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
+plugins=(ansible git colored-man-pages colorize pip python brew ssh-agent vagrant virtualenv zsh-nvm)
+```
+
+## nvm alias error: 'nvm_list_aliases:36: no matches found: ~/.nvm/alias/lts/*'
+
+To avoid this error, we install the latest --lts version
+
+```
+# install the latest LTS version for nvm
+# to avoid error 'nvm_list_aliases:36: no matches found: ~/.nvm/alias/lts/*'
+nvm install --lts && nvm use --lts
 ```

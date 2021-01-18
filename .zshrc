@@ -17,8 +17,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 # - PIPENV: Ensure pipenv creates environment inside the current directory
 export PIPENV_VENV_IN_PROJECT="enabled"
-# - ZSH: Path to your oh-my-zsh installation. This is the parent folder
-export ZSH="~"
+# - ZSH: Path to your oh-my-zsh installation. This is the parent folder for oh-my-zsh.sh
+export ZSH="${HOME}/.oh-my-zsh"
  
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -90,7 +90,10 @@ plugins=(ansible git colored-man-pages colorize pip python brew ssh-agent vagran
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_rsa
 zstyle :omz:plugins:ssh-agent lifetime 4h
-source ~/.zsh-nvm/zsh-nvm.plugin.zsh
+if [[ ! -d "${HOME}/.zsh-nvm" ]]; then 
+    git clone https://github.com/lukechilds/zsh-nvm.git ${HOME}/.zsh-nvm
+fi
+source ${HOME}/.zsh-nvm/zsh-nvm.plugin.zsh
 source $ZSH/oh-my-zsh.sh
 
 # User configuration

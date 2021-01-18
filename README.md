@@ -60,3 +60,17 @@ typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_WITH_PYENV=false
 typeset -g POWERLEVEL9K_VIRTUALENV_VISUAL_IDENTIFIER_EXPANSION=⭐
 typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=true
 ```
+# zsh-nvm plugin
+
+Customized ~/.zshrc, so it automatically installs the .zsh-nvm plugin (if the directory ~/.zshrc does not exists)
+
+See  [ lukechilds /
+zsh-nvm](https://github.com/lukechilds/zsh-nvm#manually)
+
+
+```
+if [[ ! -d "${HOME}/.zsh-nvm" ]]; then
+    git clone https://github.com/lukechilds/zsh-nvm.git ${HOME}/.zsh-nvm
+fi
+source ${HOME}/.zsh-nvm/zsh-nvm.plugin.zsh
+```

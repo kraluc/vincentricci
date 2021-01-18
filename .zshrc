@@ -17,8 +17,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 # - PIPENV: Ensure pipenv creates environment inside the current directory
 export PIPENV_VENV_IN_PROJECT="enabled"
-# - ZSH: Path to your oh-my-zsh installation.
-export ZSH="/Users/vincentricci/.oh-my-zsh"
+# - ZSH: Path to your oh-my-zsh installation. This is the parent folder
+export ZSH="~"
  
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

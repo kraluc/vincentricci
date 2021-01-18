@@ -68,7 +68,7 @@ typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=true
 ```
 # zsh-nvm plugin
 
-Customized ~/.zshrc, so it automatically installs the .zsh-nvm plugin (if the directory ~/.zshrc does not exists)
+Customized ~/.zshrc, so it automatically installs the .zsh-nvm plugin
 
 See  [ lukechilds /
 zsh-nvm](https://github.com/lukechilds/zsh-nvm#manually)

@@ -5,6 +5,12 @@ Customized settings I gleaned from other people's posts.
 ## Setup Powerlevel 10k
    *  P10k is a fantastic Zshell theme from romkatv! Just follow instructions here:  [Get Started](https://github.com/romkatv/powerlevel10k#get-started)
 
+### Ensure font is set in terminal
+
+In iTerm2 > Preferences > Profile > Text
+ make sure that the font MesloLGS NF is selected
+ ![](iterm2_font_profile.png)
+
 ## Fix the Virtual Environment prompt
 
 ### Problem:

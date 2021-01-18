@@ -12,14 +12,18 @@ export PATH="/usr/local/sbin:/Users/vincentricci/Library/Python/2.7/bin:$PATH"
 
 ## Environment Variables
 # - NVM:
+if [[ ! -d ${HOME}/.nvm ]]; then
+  mkdir -p ${HOME}/.nvm
+fi
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+export NVM_COMPLETION=true
+#[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+#[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 # - PIPENV: Ensure pipenv creates environment inside the current directory
 export PIPENV_VENV_IN_PROJECT="enabled"
 # - ZSH: Path to your oh-my-zsh installation. This is the parent folder for oh-my-zsh.sh
 export ZSH="${HOME}/.oh-my-zsh"
- 
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -85,15 +89,16 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
+# zsh-nvm plugin - https://github.com/lukechilds/zsh-nvm
+if [[ ! -d "${HOME}/.oh-my-zsh/custom/plugins/zsh-nvm" ]]; then
+    git clone https://github.com/lukechilds/zsh-nvm.git ${HOME}/.oh-my-zsh/custom/plugins/zsh-nvm
+fi
 # ssh-agent plugin - see https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
-plugins=(ansible git colored-man-pages colorize pip python brew ssh-agent vagrant virtualenv)
+plugins=(ansible git colored-man-pages colorize pip python brew ssh-agent vagrant virtualenv zsh-nvm)
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_rsa
 zstyle :omz:plugins:ssh-agent lifetime 4h
-if [[ ! -d "${HOME}/.zsh-nvm" ]]; then 
-    git clone https://github.com/lukechilds/zsh-nvm.git ${HOME}/.zsh-nvm
-fi
-source ${HOME}/.zsh-nvm/zsh-nvm.plugin.zsh
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -128,3 +133,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# install the latest LTS version for nvm
+# to avoid error 'nvm_list_aliases:36: no matches found: ~/.nvm/alias/lts/*'
+nvm install --lts

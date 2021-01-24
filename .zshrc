@@ -7,7 +7,9 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+#export PATH="/usr/local/opt/inetutils/libexec/gnubin:$PATH"
 export PATH=/usr/bin/java:$PATH
+#export PATH="/usr/local/opt/inetutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/sbin:/Users/vincentricci/Library/Python/2.7/bin:$PATH"
 
 ## Environment Variables

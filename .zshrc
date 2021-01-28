@@ -139,4 +139,4 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # install the latest LTS version for nvm
 # to avoid error 'nvm_list_aliases:36: no matches found: ~/.nvm/alias/lts/*'
-nvm install --lts && nvm use --lts
+#nvm install --lts && nvm use --lts

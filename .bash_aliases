@@ -3,7 +3,6 @@ alias gsv='git status -v'
 alias gam='git commit -am '
 alias gh='git hist'
 alias grh='git reset HEAD'
-alias gr='git restore '
 alias gl2='git log -p -2'
 alias "ttahleaf49=telnet 172.16.113.19 2008"
 alias ..='cd ..'

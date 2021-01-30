@@ -1,3 +1,4 @@
+alias ssh='TERM=xterm ssh'  # when remote term does not support colors
 alias gs='git status'
 alias gsv='git status -v'
 alias gam='git commit -am '
@@ -140,3 +141,4 @@ alias gx='ssh admin@10.122.165.214'
 alias calobru='lftp calo:calo@calo-bru-fs.cisco.com'
 alias ssmp='ssh admin@172.16.31.3'
 alias sr='cd ~/Documents/Notebooks/Current-case && ltt'
+alias tg='open -a glogg '

@@ -1,3 +1,10 @@
+alias gs='git status'
+alias gsv='git status -v'
+alias gam='git commit -am '
+alias gh='git hist'
+alias grh='git reset HEAD'
+alias gr='git restore '
+alias gl2='git log -p -2'
 alias "ttahleaf49=telnet 172.16.113.19 2008"
 alias ..='cd ..'
 alias 56leaf57='ssh admin@172.16.102.57'
@@ -133,3 +140,4 @@ alias clean="egrep -v '(#|^$)' "
 alias gx='ssh admin@10.122.165.214'
 alias calobru='lftp calo:calo@calo-bru-fs.cisco.com'
 alias ssmp='ssh admin@172.16.31.3'
+alias sr='cd ~/Documents/Notebooks/Current-case && ltt'

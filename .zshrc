@@ -154,3 +154,6 @@ mansi ()  { man $1 | grep -iC2 --color=always $2 | less; } # mans: search man pa
 # install the latest LTS version for nvm
 # to avoid error 'nvm_list_aliases:36: no matches found: ~/.nvm/alias/lts/*'
 #nvm install --lts && nvm use --lts
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+

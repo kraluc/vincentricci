@@ -12,7 +12,7 @@ export PATH=/usr/bin/java:$PATH
 #export PATH="/usr/local/opt/inetutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/sbin:/Users/vincentricci/Library/Python/2.7/bin:$PATH"
 
-## Environment Variables
+
 # - NVM:
 if [[ ! -d ${HOME}/.nvm ]]; then
   mkdir -p ${HOME}/.nvm
@@ -21,9 +21,12 @@ export NVM_DIR="$HOME/.nvm"
 export NVM_COMPLETION=true
 export NVM_LAZY_LOAD=true
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+[ -s "/usr/local/op(default: oldest in dir://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
+t/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+
 # - PIPENV: Ensure pipenv creates environment inside the current directory
 export PIPENV_VENV_IN_PROJECT="enabled"
+
 # - ZSH: Path to your oh-my-zsh installation. This is the parent folder for oh-my-zsh.sh
 export ZSH="${HOME}/.oh-my-zsh"
 
@@ -106,6 +109,14 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# removes write permission from groups and all permission for others
+umask 0027
+
+## Environment Variables
+export TODAY=$(date)
+export HISTCONTROL=ignoredups 
+export HISTSIZE=1000
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -125,10 +136,6 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.bash_aliases
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
@@ -136,6 +143,13 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Custom Functions
+cd ()    { builtin cd "$@" ; ltt; }     # change to dir and lists latest content tail
+ct()     { builtin cd "$@" && tree -a -L 1; }  # change to dir and tree
+diffs () { diff -yw --suppress-common-lines "$@"; }  # display diff side by side
+mcd ()   { mkdir -p "$1" && cd "$1"; }              # makes new dir and jumps into it
+mansi ()  { man $1 | grep -iC2 --color=always $2 | less; } # mans: search man pages given an argument 1
 
 # install the latest LTS version for nvm
 # to avoid error 'nvm_list_aliases:36: no matches found: ~/.nvm/alias/lts/*'

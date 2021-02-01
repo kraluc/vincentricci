@@ -145,7 +145,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Custom Functions
-cd ()    { builtin cd "$@" ; ltt; }     # change to dir and lists latest content tail
+cd ()    { builtin cd "$@" ; echo "truncated content" ; ltt; }     # change to dir and lists latest content tail
 ct()     { builtin cd "$@" && tree -a -L 1; }  # change to dir and tree
 diffs () { diff -yw --suppress-common-lines "$@"; }  # display diff side by side
 mcd ()   { mkdir -p "$1" && cd "$1"; }              # makes new dir and jumps into it

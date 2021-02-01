@@ -145,7 +145,6 @@ alias tcam9k-1="ssh admin@10.122.163.96"
 alias tcam9k-2="ssh admin@10.122.164.138"
 alias tcam9k-3="ssh admin@10.122.163.84"
 alias tex="open -e"
-alias tg='open -a glogg '
 alias topForever='top -l 9999999 -s 10 -o cpu'
 alias topo='top -o CPU -O mem'                               # sort by top CPU utilization and then Memory
 alias ttop='top -R -F -s 10 -o rsize'

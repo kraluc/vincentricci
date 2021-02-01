@@ -149,7 +149,9 @@ cd ()    { builtin cd "$@" ; echo "truncated content" ; ltt; }     # change to d
 ct()     { builtin cd "$@" && tree -a -L 1; }  # change to dir and tree
 diffs () { diff -yw --suppress-common-lines "$@"; }  # display diff side by side
 mcd ()   { mkdir -p "$1" && cd "$1"; }              # makes new dir and jumps into it
-mansi ()  { man $1 | grep -iC2 --color=always $2 | less; } # mans: search man pages given an argument 1
+mansi () { man $1 | grep -iC2 --color=always $2 | less; } # mans: search man pages given an argument 1
+tg ()    { open -a "/Applications/glogg.app" --args -n "$(pwd)/$@"; } # open new klogg session
+tk ()    { open -a "/Applications/klogg.app" --args -n "$(pwd)/$@"; } # open new klogg session
 
 # install the latest LTS version for nvm
 # to avoid error 'nvm_list_aliases:36: no matches found: ~/.nvm/alias/lts/*'

@@ -12,6 +12,7 @@ alias 9kv='ssh -i ~/.ssh/id_rsa admin@172.16.139.139'        # NXOSv in 9Kv topo
 alias acl='python /Volumes/Users/admin/Development/PYTHON/Python3.7/acls/aclgen.py'
 alias act='conda activate ansible-sj-static && cd ~/Documents/Development/PYTHON/ansible-sj-static'
 alias ansi='ssh -l admin 172.16.102.117'
+alias as='cd ~/Library/services'
 alias bgw31="ssh admin@172.16.102.31"
 alias bgw32="ssh admin@172.16.102.32"
 alias bgw33="ssh admin@172.16.102.33"

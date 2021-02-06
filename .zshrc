@@ -6,11 +6,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
 #export PATH="/usr/local/opt/inetutils/libexec/gnubin:$PATH"
+export PATH=$HOME/bin:$PATH
 export PATH=/usr/bin/java:$PATH
-#export PATH="/usr/local/opt/inetutils/libexec/gnubin:$PATH"
-export PATH="/usr/local/sbin:/Users/vincentricci/Library/Python/2.7/bin:$PATH"
+export PATH=/usr/local/Cellar:$PATH
+export PATH=/usr/local/sbin:/Users/vincentricci/Library/Python/2.7/bin:$PATH
 
 
 # - NVM:

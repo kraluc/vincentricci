@@ -98,6 +98,7 @@ alias ovnc='open vnc://ladmin@localhost:6900'
 alias pdw='pwd'
 alias people='ssh -i ~/.ssh/id_rsa vricci@people.cisco.com'
 alias poap='ssh admin@10.31.121.39'
+alias pt="env | grep -i | tr ':' '\n'"
 alias rarpCORE='ssh admin@10.201.177.41'
 alias rarpDIST1='ssh admin@10.201.177.114'
 alias rarpDIST2='ssh admin@10.201.177.37'

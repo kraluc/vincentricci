@@ -7,6 +7,5 @@
 !/.zshrc
 !/.p10k.zsh
 !/.ssh/config
-!/roles
 !/images
 !/iTerm-Profiles.json

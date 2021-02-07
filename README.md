@@ -8,7 +8,7 @@ P10k is a fantastic Zshell theme from romkatv! - Follow [Get Started](https://gi
 
 + Open ```iTerm2 Preferences```. Select ```Profile > Text```
 + Below ```Font``` select ```MesloLGS NF```
-![set Font to 'MesloLGS NF'](iterm2_font_profile.png)
+![set Font to 'MesloLGS NF'](images/iterm2_font_profile.png)
 
 ### Fix the Virtual Environment Prompt
 
@@ -21,7 +21,7 @@ P10k is a fantastic Zshell theme from romkatv! - Follow [Get Started](https://gi
    source venv/bin/activate
    ```
 
-![Prompt Missing the virtual environment](iTerm2-no-virtual-env-prompt.png)
+![Prompt Missing the virtual environment](images/iTerm2-no-virtual-env-prompt.png)
 
 ### [Soluttion from romkatv](https://github.com/romkatv/powerlevel10k/issues/532#issuecomment-592064973)
 
@@ -44,7 +44,7 @@ P10k is a fantastic Zshell theme from romkatv! - Follow [Get Started](https://gi
 5. Verify that after activating the virtual environment... the prompt DOES CHANGE
 (added star icon, python version and the name of the environment)
 
-   ![Prompt shows the virtual environment](iTerm2-virtual-env-prompt.png)
+   ![Prompt shows the virtual environment](images/iTerm2-virtual-env-prompt.png)
 
 6. You can confirm the p10k settings with this function (paste this at the prompt)
 
@@ -104,7 +104,25 @@ This continues to be an **awesome** Terminal replacement for macOS ([download](h
    3. Select the Profile Advanced tab
    4. Click ```Other Actions``` to import/export/duplicate your profiles
 
-   ![manage profiles](iTerm-Pref-Prof-SaveAll.png)
+   ![manage profiles](images/iTerm-Pref-Prof-SaveAll.png)
+
+#### Colorized Log Viewer with 'Triggers'
+
+"Triggers watch for text matching a regular expression to arrive in a terminal session and then perform an action in response".
++ Login prompt detection + pass a username automatically
++ Colorize fields e.g. IP addresses, failures, errors, etc
+
+Here is a screenshot of an output that has been automatically colorized
++ ![Colorized `show ip route`](images/iTerm2-colorized-output-Triggers.png)
+
+Here are the stepts needed to configure the Triggers
+
+1. Open ```Preferences > Profile > Advanced```
+click the ```Edit``` button under ```Triggers```
+![Preferences > Profile > Advanced Tab](images/iTerm2-Pref-Prof-Advanced.png)
+2. We can define regex to match specific patterns and action to change colors
+![Edit Triggers](images/iTerm2-parsing-triggers.png)
+
 
 ### Configure iTerm2 to be the default terminal for ```telnet```, ```ssh```, etc
 
@@ -146,22 +164,30 @@ This continues to be an **awesome** Terminal replacement for macOS ([download](h
       telnet    <<<<<<
    ```
 
-3. Confirm the PATH to ```telnet```
+#### URL SCHEMES
+
++ This setting ensures that iTerm is the default Terminal application when clicking URLs for a specified protocol
+
+1. Select your iTerm profile  (General Tab)
+
+2. Click the combo box 'Select URL Schemes'
+![iTerm Preferences > General Tab](images/iTerm-Preferences.png)
+
+3. Click a protocol. You will be prompted whether to accept iTerm2 as the default Terminal application. Click OK
+![URL Schemes - select a protocol(s)> ](images/iTerm2-select-protocol.png)
+
++ For protocol utilities with a path other than the normal system path /usr/bin,  e.g. homebrew installed ```telnet``` and ```ftp```, we also need to specify the path in iTerm2.
+
+4. Find the PATH of ```telnet```
 
    ```zsh
    ❯ which -a telnet
    /usr/local/bin/telnet
    ```
 
+5. Open iTerm2 ```Preferences > Advanced``` Tab (**not** ```Profile > Advanced```):
+In the Search bar, type ```telnet``` + ENTER.
+Update the path to ```/usr/local/bin/telnet```
+![set custom path for telnet](images/iTerm2-Preferences-Advanced-Telnet.png)
 
-#### CONFIGURE URL SCHEMES
-
-+ This will ensure that iTerm is the default Terminal application when clicking URLs for a specified protocol
-
-1. Select your iTerm profile  (General Tab)
-2. Click the combo box 'Select URL Schemes'
-![iTerm Preferences > General Tab](iTerm-Preferences.png)
-
-
-3. Click a protocol
-![URL Schemes - select a protocol(s)> ](iTerm2-select-protocol.png)
+6. Repeat for ftp as needed.  Done.

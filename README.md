@@ -23,7 +23,7 @@ P10k is a fantastic Zshell theme from romkatv! - Follow [Get Started](https://gi
 
 ![Prompt Missing the virtual environment](images/iTerm2-no-virtual-env-prompt.png)
 
-### [Soluttion from romkatv](https://github.com/romkatv/powerlevel10k/issues/532#issuecomment-592064973)
+### [Solution from romkatv](https://github.com/romkatv/powerlevel10k/issues/532#issuecomment-592064973)
 
 1. Open ~/.p10k.zsh.
 2. Add the following line close to the existing parameter ```POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION```
@@ -115,7 +115,7 @@ This continues to be an **awesome** Terminal replacement for macOS ([download](h
 Here is a screenshot of an output that has been automatically colorized
 + ![Colorized `show ip route`](images/iTerm2-colorized-output-Triggers.png)
 
-Here are the stepts needed to configure the Triggers
+Here are the steps needed to configure the Triggers
 
 1. Open ```Preferences > Profile > Advanced```
 click the ```Edit``` button under ```Triggers```
@@ -141,7 +141,7 @@ click the ```Edit``` button under ```Triggers```
 
 1. Use homebrew to install telnet
    + available as a standalone ```telnet``` formula
-   + or bundled with other networking utilites from ```inetutils```  <<<  We choose this approach below
+   + or bundled with other networking utilities from ```inetutils```  <<<  We choose this approach below
 
    ```zsh
       brew install inetutils

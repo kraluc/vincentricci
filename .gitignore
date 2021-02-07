@@ -1,0 +1,12 @@
+/*
+!/.gitignore
+!/.bash_aliases
+!/.bashrc
+!/.bash_profile
+!/.vimrc
+!/.zshrc
+!/.p10k.zsh
+!/.ssh/config
+!/roles
+!/images
+!/iTerm-Profiles.json

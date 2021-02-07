@@ -7,7 +7,7 @@ P10k is a fantastic Zshell theme from romkatv! - Follow [Get Started](https://gi
 ### Set the Terminal Font
 
 + Open ```iTerm2 Preferences```. Select ```Profile > Text```
-+ Below ```Font``` select ```MesloLGS NF```
++ Set the ```Font``` to ```MesloLGS NF```
 ![set Font to 'MesloLGS NF'](images/iterm2_font_profile.png)
 
 ### Fix the Virtual Environment Prompt

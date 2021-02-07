@@ -23,7 +23,7 @@ P10k is a fantastic Zshell theme from romkatv! - Follow [Get Started](https://gi
 
 ![Prompt Missing the virtual environment](images/iTerm2-no-virtual-env-prompt.png)
 
-### [Solution from romkatv](https://github.com/romkatv/powerlevel10k/issues/532#issuecomment-592064973)
+#### [Solution from romkatv](https://github.com/romkatv/powerlevel10k/issues/532#issuecomment-592064973)
 
 1. Open ~/.p10k.zsh.
 2. Add the following line close to the existing parameter ```POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION```
@@ -68,7 +68,7 @@ P10k is a fantastic Zshell theme from romkatv! - Follow [Get Started](https://gi
    typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=true
    ```
 
-# zsh-nvm plugin
+## zsh-nvm plugin
 
 Customized ```~/.zshrc``` to automatically install ```.zsh-nvm plugin``` - See [lukechilds /
 zsh-nvm](https://github.com/lukechilds/zsh-nvm#manually)
@@ -82,7 +82,7 @@ fi
 plugins=(ansible git colored-man-pages colorize pip python brew ssh-agent vagrant virtualenv zsh-nvm)
 ```
 
-## nvm alias error: ```nvm_list_aliases:36: no matches found: ~/.nvm/alias/lts/*```
+### nvm alias error: ```nvm_list_aliases:36: no matches found: ~/.nvm/alias/lts/*```
 
 + To avoid this error, we install the latest ```--lts``` version
 

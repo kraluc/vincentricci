@@ -64,6 +64,7 @@ alias klm='open -a klogg.app --args -m -s '
 alias l.='ls -d .* '                                         # displays all directories beginning with .
 alias la='ls -d .[!.]?*'
 alias lc='ls -c1'
+alias lcg='lc | egrep '
 alias ld='ls -F | grep "/$" | sed "s/\/$//" | sort -f'       # display all directories, sorted/ignore case
 alias let='less $(ls -rt | tail -1)'                         # open the most recent file in less
 alias ll='ls -l'

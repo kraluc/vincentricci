@@ -106,7 +106,7 @@ This continues to be an **awesome** Terminal replacement for macOS ([download](h
 
    ![manage profiles](images/iTerm-Pref-Prof-SaveAll.png)
 
-#### Colorized Log Viewer with 'Triggers'
+### COLORIZED LOG VIEWER AND MORE WITH 'TRIGGERS'
 
 "Triggers watch for text matching a regular expression to arrive in a terminal session and then perform an action in response".
 + Login prompt detection + pass a username automatically
@@ -124,9 +124,9 @@ click the ```Edit``` button under ```Triggers```
 ![Edit Triggers](images/iTerm2-parsing-triggers.png)
 
 
-### Configure iTerm2 to be the default terminal for ```telnet```, ```ssh```, etc
+### DEFAULT TERMINAL FOR TELNET AND OTHER PROTOCOLS
 
-#### INSTALL HOMEBREW
+#### Install Homebrew
 
 + [Homebrew](https://brew.sh/) documentation
 + Open ```Terminal.app``` or ```iTerm.app```
@@ -137,7 +137,7 @@ click the ```Edit``` button under ```Triggers```
       /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
    ```
 
-#### INSTALL```TELNET```
+#### Install```Telnet```
 
 1. Use homebrew to install telnet
    + available as a standalone ```telnet``` formula
@@ -164,7 +164,7 @@ click the ```Edit``` button under ```Triggers```
       telnet    <<<<<<
    ```
 
-#### URL SCHEMES
+#### URL Schemes
 
 + This setting ensures that iTerm is the default Terminal application when clicking URLs for a specified protocol
 

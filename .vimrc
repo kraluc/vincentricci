@@ -14,3 +14,9 @@ set expandtab                   " Expand TABs to spaces
 set number relativenumber       " hybrid number mode
 set cursorline
 set backspace=indent,eol,start  " 'fix' backspace in insert mode
+
+augroup numbertoggle            " https://jeffkreeftmeijer.com/vim-number/
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END

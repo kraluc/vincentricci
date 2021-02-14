@@ -34,7 +34,8 @@ export ZSH="${HOME}/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -100,7 +101,7 @@ if [[ ! -d "${HOME}/.oh-my-zsh/custom/plugins/zsh-nvm" ]]; then
     git clone https://github.com/lukechilds/zsh-nvm.git ${HOME}/.oh-my-zsh/custom/plugins/zsh-nvm
 fi
 # ssh-agent plugin - see https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
-plugins=(ansible git colored-man-pages colorize pip python brew ssh-agent vagrant virtualenv zsh-nvm)
+plugins=(ansible docker docker-compose git colored-man-pages colorize pip python brew ssh-agent vagrant virtualenv zsh-nvm zsh-autosuggestions zsh-completions zsh-syntax-highlighting)
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_rsa
 zstyle :omz:plugins:ssh-agent lifetime 4h
@@ -141,8 +142,6 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Custom Functions
 cd ()    { builtin cd "$@" ; echo "truncated content" ; ltt; }     # change to dir and lists latest content tail
@@ -158,4 +157,3 @@ tk ()    { pkill "klogg" ; open -a "/Applications/klogg.app" --args -n "$(pwd)/$
 #nvm install --lts && nvm use --lts
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-

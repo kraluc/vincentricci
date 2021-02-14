@@ -1,5 +1,16 @@
 # Customization Tips
 
+<!-- TOC -->
+[Customization Tips](#customization-tips)
+- [Powerlevel 10k](#powerlevel-10k)
+- [zsh-nvm plugin](#zsh-nvm-plugin)
+- [iTerm2](#iterm2)
+- [Vim](#vim)
+<!-- /TOC -->
+
+
+
+
 ## Powerlevel 10k
 
 P10k is a fantastic Zshell theme from romkatv! - Follow [Get Started](https://github.com/romkatv/powerlevel10k#get-started)
@@ -173,21 +184,59 @@ click the ```Edit``` button under ```Triggers```
 2. Click the combo box 'Select URL Schemes'
 ![iTerm Preferences > General Tab](images/iTerm-Preferences.png)
 
-3. Click a protocol. You will be prompted whether to accept iTerm2 as the default Terminal application. Click OK
-![URL Schemes - select a protocol(s)> ](images/iTerm2-select-protocol.png)
+3. Click a protocol
 
-+ For protocol utilities with a path other than the normal system path /usr/bin,  e.g. homebrew installed ```telnet``` and ```ftp```, we also need to specify the path in iTerm2.
+- You will be prompted whether to accept iTerm2 as the default Terminal application. Click OK
 
-4. Find the PATH of ```telnet```
+   ![URL Schemes - select a protocol(s)> ](images/iTerm2-select-protocol.png)
 
-   ```zsh
-   ❯ which -a telnet
-   /usr/local/bin/telnet
+
+4.  homebrew installation PATH for ```telnet``` is available from the following output
+
+      ```zsh
+      ❯ which -a telnet
+      /usr/local/bin/telnet
+      ```
+
+5. Open iTerm2 ```Preferences > Advanced``` Tab
+
+   - In the Search bar, type ```telnet``` + ENTER
+   - Update the path to ```/usr/local/bin/telnet```
+   - Repeat for other custom protocol installations (ftp, etc.)
+
+   ![set custom path for telnet](images/iTerm2-Preferences-Advanced-Telnet.png)
+
+
+## Vim
+
+### Automatic toggling of Hybrid Line Numbers
+
++ See Jeff Kreeftmeijer's [Vim’s absolute, relative and hybrid line numbers](https://jeffkreeftmeijer.com/vim-number/)
+
+   - Manual Toggling / Escape + ':' an then set...
+
+      ```bash
+      " turn hybrid line numbers on
+      :set number relativenumber
+      :set nu rnu
+
+      " turn hybrid line numbers off
+      :set nonumber norelativenumber
+      :set nonu nornu
+
+      " toggle hybrid line numbers
+      :set number! relativenumber!
+      :set nu! rnu!
    ```
 
-5. Open iTerm2 ```Preferences > Advanced``` Tab (**not** ```Profile > Advanced```):
-In the Search bar, type ```telnet``` + ENTER.
-Update the path to ```/usr/local/bin/telnet```
-![set custom path for telnet](images/iTerm2-Preferences-Advanced-Telnet.png)
+   - Automatic toggling between line number modes: add the following to ```.vimrc```
 
-6. Repeat for ftp as needed.  Done.
+      ```bash
+      :set number relativenumber
+
+      :augroup numbertoggle
+      :  autocmd!
+      :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+      :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+      :augroup END
+      ```

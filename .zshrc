@@ -27,6 +27,9 @@ t/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.
 # - PIPENV: Ensure pipenv creates environment inside the current directory
 export PIPENV_VENV_IN_PROJECT="enabled"
 
+# - zsh syntax highlight requires this (does not appear to source .zshenv)
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
+
 # - ZSH: Path to your oh-my-zsh installation. This is the parent folder for oh-my-zsh.sh
 export ZSH="${HOME}/.oh-my-zsh"
 

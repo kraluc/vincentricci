@@ -20,9 +20,6 @@ fi
 export NVM_DIR="$HOME/.nvm"
 export NVM_COMPLETION=true
 export NVM_LAZY_LOAD=true
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/op(default: oldest in dir://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
-t/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 
 # - PIPENV: Ensure pipenv creates environment inside the current directory
 export PIPENV_VENV_IN_PROJECT="enabled"
@@ -152,9 +149,26 @@ ct()     { builtin cd "$@" && tree -a -L 1; }  # change to dir and tree
 diffs () { diff -yw --suppress-common-lines "$@"; }  # display diff side by side
 mcd ()   { mkdir -p "$1" && cd "$1"; }              # makes new dir and jumps into it
 mansi () { man $1 | grep -iC2 --color=always $2 | less; } # mans: search man pages given an argument 1
-tg ()    { pkill "glogg" ; open -a "/Applications/glogg.app" --args -n "$(pwd)/$@"; } # open new klogg session
+tg ()    { pkill "glogg" ; open -a "/Applications/glogg.app" --args -n "$(pwd)/$@"; } # open new glogg session
 tk ()    { pkill "klogg" ; open -a "/Applications/klogg.app" --args -n "$(pwd)/$@"; } # open new klogg session
-
+# How to run nvm in .zsh - https://stackoverflow.com/questions/47009776/how-to-run-nvm-in-oh-my-zsh/47017363
+lazynvm() {
+  unset -f nvm node npm
+  export NVM_DIR=~/.nvm
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+}
+nvm() {
+  lazynvm 
+  nvm $@
+}
+node() {
+  lazynvm
+  node $@
+}
+npm() {
+  lazynvm
+  npm $@
+}
 # install the latest LTS version for nvm
 # to avoid error 'nvm_list_aliases:36: no matches found: ~/.nvm/alias/lts/*'
 #nvm install --lts && nvm use --lts

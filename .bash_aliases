@@ -130,6 +130,7 @@ alias spine52="ssh admin@172.16.102.52"
 alias sr='cd ~/Documents/Notebooks/Current-case && ltt'
 alias ssh='TERM=xterm ssh'  # when remote term does not support colors
 alias ssmp='ssh admin@172.16.31.3'
+alias static='cd /Volumes/Users/vricci/Documents/Development/Ansible/ansible-sj-static && pipenv shell'
 alias t1='tree -a -L 1'
 alias t2='ssh admin@172.16.102.42'
 alias t2='tree -a -L 2' 

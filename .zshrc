@@ -12,6 +12,10 @@ export PATH=/usr/bin/java:$PATH
 export PATH=/usr/local/Cellar:$PATH
 export PATH=/usr/local/sbin:/Users/vincentricci/Library/Python/2.7/bin:$PATH
 
+# - PYENV
+#  https://github.com/pyenv/pyenv
+export PYENV_ROOT="${HOME}/.pyenv"
+export PATH="${PYENV_ROOT}/bin:$PATH"
 
 # - NVM:
 if [[ ! -d ${HOME}/.nvm ]]; then
@@ -169,8 +173,16 @@ npm() {
   lazynvm
   npm $@
 }
+pyenv_init () {
+if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init -)"
+fi
+}
+pyenv_init
+
 # install the latest LTS version for nvm
 # to avoid error 'nvm_list_aliases:36: no matches found: ~/.nvm/alias/lts/*'
 #nvm install --lts && nvm use --lts
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+

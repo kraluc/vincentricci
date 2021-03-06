@@ -153,8 +153,9 @@ ct()     { builtin cd "$@" && tree -a -L 1; }  # change to dir and tree
 diffs () { diff -yw --suppress-common-lines "$@"; }  # display diff side by side
 mcd ()   { mkdir -p "$1" && cd "$1"; }              # makes new dir and jumps into it
 mansi () { man $1 | grep -iC2 --color=always $2 | less; } # mans: search man pages given an argument 1
-tg ()    { pkill "glogg" ; open -a "/Applications/glogg.app" --args -n "$(pwd)/$@"; } # open new glogg session
-tk ()    { pkill "klogg" ; open -a "/Applications/klogg.app" --args -n "$(pwd)/$@"; } # open new klogg session
+sshp () { ssh -o PreferredAuthentications=password "$@"; } # force password authentication (ignore Agent PubKey)
+tg ()    { open -a "/Applications/glogg.app" "$(pwd)/$@"; } # open new glogg session
+tk ()    { open -a "/Applications/klogg.app" "$(pwd)/$@"; } # open new klogg session
 # How to run nvm in .zsh - https://stackoverflow.com/questions/47009776/how-to-run-nvm-in-oh-my-zsh/47017363
 lazynvm() {
   unset -f nvm node npm

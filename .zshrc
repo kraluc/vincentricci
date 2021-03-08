@@ -121,6 +121,10 @@ umask 0027
 export TODAY=$(date)
 export HISTCONTROL=ignoredups 
 export HISTSIZE=1000
+ # Ansible setting (Somehow configurateion in ansible.cfg command_timeout is being ignored)
+export ANSIBLE_PERSISTENT_CONNECT_TIMEOUT=600        # default: 30s
+export ANSIBLE_PERSISTENT_COMMAND_TIMEOUT=120        # default: 30s
+export ANSIBLE_PERSISTENT_CONNECT_RETRY_TIMEOUT=300  # default: 15s
 
 # export MANPATH="/usr/local/man:$MANPATH"
 

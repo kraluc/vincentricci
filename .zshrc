@@ -13,7 +13,7 @@ export PATH=/usr/local/Cellar:$PATH
 export PATH=/usr/local/sbin:/Users/vincentricci/Library/Python/2.7/bin:$PATH
 
 # - JAVA
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home
 # - PYENV
 #  https://github.com/pyenv/pyenv
 export PYENV_ROOT="${HOME}/.pyenv"

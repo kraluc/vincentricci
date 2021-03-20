@@ -107,7 +107,7 @@ if [[ ! -d "${HOME}/.oh-my-zsh/custom/plugins/zsh-nvm" ]]; then
     git clone https://github.com/lukechilds/zsh-nvm.git ${HOME}/.oh-my-zsh/custom/plugins/zsh-nvm
 fi
 # ssh-agent plugin - see https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
-plugins=(ansible docker docker-compose git colored-man-pages colorize pip python brew ssh-agent vagrant virtualenv zsh-nvm zsh-autosuggestions zsh-completions)
+plugins=(ansible docker docker-compose git colored-man-pages colorize osx pip python brew ssh-agent vagrant virtualenv zsh-nvm zsh-autosuggestions zsh-completions)
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_rsa
 zstyle :omz:plugins:ssh-agent lifetime 4h

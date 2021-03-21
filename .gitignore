@@ -9,5 +9,6 @@
 !/.ssh/config
 !/images
 !/iTerm-Profiles.json
+!/.ssh/config
 images/Vincent.jpeg
 images/.DS_Store

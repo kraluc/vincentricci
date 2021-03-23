@@ -152,6 +152,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # Custom Functions
 cd ()    { builtin cd "$@" ; echo "truncated content" ; ltt; }     # change to dir and lists latest content tail
 ct()     { builtin cd "$@" && tree -a -L 1; }  # change to dir and tree
+cdl ()   { builtin cd $(ls -c1 -rt | tail -1) } # go to the last modified directory
 diffs () { diff -yw --suppress-common-lines "$@"; }  # display diff side by side
 mcd ()   { mkdir -p "$1" && cd "$1"; }              # makes new dir and jumps into it
 mansi () { man $1 | grep -iC2 --color=always $2 | less; } # mans: search man pages given an argument 1

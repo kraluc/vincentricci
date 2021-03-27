@@ -1,4 +1,3 @@
-'"
 alias ..='cd ..'
 alias 56leaf57='ssh admin@172.16.102.57'
 alias 56leaf58='ssh admin@172.16.102.58'
@@ -114,7 +113,7 @@ alias otv10='ssh vricci@172.16.102.10'
 alias otv11='ssh vricci@172.16.102.11'
 alias otv9='ssh vricci@172.16.102.9'
 alias ovnc='open vnc://ladmin@localhost:6900'
-alias path="echo /Users/vincentricci/.pyenv/shims:/Users/vincentricci/.pyenv/bin:/usr/local/sbin:/Users/vincentricci/Library/Python/2.7/bin:/usr/local/Cellar:/usr/bin/java:/Users/vincentricci/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin:/Applications/Wireshark.app/Contents/MacOS | tr ':' '
+alias path="echo ${PATH} | tr ':' '\n'"
 alias pdw='pwd'
 alias people='ssh -i ~/.ssh/id_rsa vricci@people.cisco.com'
 alias poap='ssh admin@10.31.121.39'

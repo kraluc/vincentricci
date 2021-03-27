@@ -1423,7 +1423,7 @@
   typeset -g POWERLEVEL9K_VPN_IP_CONTENT_EXPANSION=
   # Regular expression for the VPN network interface. Run `ifconfig` or `ip -4 a show` while on VPN
   # to see the name of the interface.
-  typeset -g POWERLEVEL9K_VPN_IP_INTERFACE='(gpd|wg|(.*tun))[0-9]*'
+  typeset -g POWERLEVEL9K_VPN_IP_INTERFACE='(gpd|wg|(.*tun)|tailscale)[0-9]*'
   # If set to true, show one segment per matching network interface. If set to false, show only
   # one segment corresponding to the first matching network interface.
   # Tip: If you set it to true, you'll probably want to unset POWERLEVEL9K_VPN_IP_CONTENT_EXPANSION.
@@ -1447,7 +1447,7 @@
   typeset -g POWERLEVEL9K_IP_CONTENT_EXPANSION='$P9K_IP_IP${P9K_IP_RX_RATE:+ %70F⇣$P9K_IP_RX_RATE}${P9K_IP_TX_RATE:+ %215F⇡$P9K_IP_TX_RATE}'
   # Show information for the first network interface whose name matches this regular expression.
   # Run `ifconfig` or `ip -4 a show` to see the names of all network interfaces.
-  typeset -g POWERLEVEL9K_IP_INTERFACE='e.*'
+  typeset -g POWERLEVEL9K_IP_INTERFACE='[ew].*'
   # Custom icon.
   # typeset -g POWERLEVEL9K_IP_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
@@ -1561,7 +1561,7 @@
   #   - verbose: Enable instant prompt and print a warning when detecting console output during
   #              zsh initialization. Choose this if you've never tried instant prompt, haven't
   #              seen the warning, or if you are unsure what this all means.
-  typeset -g POWERLEVEL9K_INSTANT_PROMPT=verbose
+  typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
   # Hot reload allows you to change POWERLEVEL9K options after Powerlevel10k has been initialized.
   # For example, you can type POWERLEVEL9K_BACKGROUND=red and see your prompt turn red. Hot reload

@@ -177,6 +177,7 @@ npm() {
   lazynvm
   npm $@
 }
+# configure the shell environment for pyenv (Python version manager)
 pyenv_init () {
 if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"

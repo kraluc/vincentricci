@@ -34,7 +34,6 @@ alias calomx='lftp admin@10.31.104.72'
 alias calor='lftp calo:calo@calo-rtp-fs.cisco.com'
 alias calorcdn="lftp calo:calo@172.18.108.26"
 alias cat9K1='ssh admin@10.201.177.135'
-#alias cdl="cd $(ls -c1 -rt | tail -1)"
 alias cent="ssh vricci@172.16.31.4"
 alias chx='chmod +x'
 alias clean="egrep -v '(#|^$)' " 

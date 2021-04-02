@@ -80,6 +80,8 @@ alias lc='ls -c1'
 alias lcd='ls -c1 -rt | tail -1'
 alias lcg='lc | egrep '
 alias ld='ls -F | grep "/$" | sed "s/\/$//" | sort -f'       # display all directories, sorted/ignore case
+alias leaf93fx2='ssh ansible@172.16.102.93'
+alias leaf94fx2='ssh ansible@172.16.102.94'
 alias let='less $(ls -rt | tail -1)'                         # open the most recent file in less
 alias ll='ls -l'
 alias locatedb='sudo /usr/libexec/locate.updatedb 2> /dev/null &'
@@ -137,6 +139,7 @@ alias spine41="ssh admin@172.16.102.40"
 alias spine42="ssh admin@172.16.102.42"
 alias spine51="ssh admin@172.16.102.51"
 alias spine52="ssh admin@172.16.102.52"
+alias spine95='ssh ansible@172.16.102.95'
 alias sr='cd ~/Documents/Notebooks/Current-case && ltt'
 alias ssh='TERM=xterm ssh'  # when remote term does not support colors
 alias ssmp='ssh admin@172.16.31.3'

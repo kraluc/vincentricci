@@ -179,3 +179,4 @@ alias vnet='sudo vmnet-cli'
 alias vnet='sudo vmnet-cli'                                  # VMWare cli to control DHCP and NAT
 alias wget='curl -O'
 alias wire='open -n /Applications/Wireshark.app'             # open multiple Wireshark sessions
+alias csr1='ssh 192.168.56.101'

@@ -39,6 +39,7 @@ alias cent="ssh vricci@172.16.31.8"
 alias chx='chmod +x'
 alias clean="egrep -v '(#|^$)' "
 alias cpuHogs='ps wwaxr -o pid,stat,%cpu,time,command | head -10'
+alias csr1='ssh 192.168.56.101'
 alias dcnm1='ssh sysadmin@sj-dcrs-dcnm1.cisco.com'
 alias dcnm2='ssh sysadmin@sj-dcrs-dcnm2.cisco.com'
 alias ddu='du -sh * | sort -hr | head -20'

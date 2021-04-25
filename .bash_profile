@@ -83,3 +83,5 @@ export ARCHFLAGS="-arch x86_64"
 #unset __conda_setup
 ## <<< conda initialize <<<
 #
+
+complete -C /usr/local/bin/terraform terraform

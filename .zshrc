@@ -196,3 +196,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 fpath=(/opt/vagrant/embedded/gems/2.2.15/gems/vagrant-2.2.15/contrib/zsh $fpath)
 compinit
 # <<<<  Vagrant command completion (end)
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform

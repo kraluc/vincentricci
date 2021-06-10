@@ -19,6 +19,11 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home
 export PYENV_ROOT="${HOME}/.pyenv"
 export PATH="${PYENV_ROOT}/bin:$PATH"
 
+# zlib dependency - brew reinstall zlib and set the following ENV variables
+# https://stackoverflow.com/questions/34200602/the-python-zlib-extension-was-not-compiled-on-mac-os-x-10-11-1
+export LDFLAGS="-L/usr/local/opt/zlib/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include"
+export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig"
 # - NVM:
 if [[ ! -d ${HOME}/.nvm ]]; then
   mkdir -p ${HOME}/.nvm

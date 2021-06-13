@@ -11,20 +11,10 @@ export PATH=$HOME/bin:$PATH
 export PATH=/usr/bin/java:$PATH
 export PATH=/usr/local/Cellar:$PATH
 export PATH=/usr/local/sbin:/Users/vincentricci/Library/Python/2.7/bin:$PATH
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 
 # - JAVA
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home
-# - PYENV
-#  https://github.com/pyenv/pyenv#basic-github-checkout
-#  https://github.com/pyenv/pyenv
-#  https://devguide.python.org/setup/#build-dependencies
-export PYENV_ROOT="${HOME}/.pyenv"
-export PATH="${PYENV_ROOT}/bin:$PATH"
-
-# zlib dependency - brew reinstall zlib and set the following ENV variables
-# https://stackoverflow.com/questions/34200602/the-python-zlib-extension-was-not-compiled-on-mac-os-x-10-11-1
-export CPPFLAGS="-I$(brew --prefix openssl)/include -I$(xcrun --show-sdk-path)/usr/include"
-export LDFLAGS="-L$(brew --prefix openssl)/lib"
 
 # - NVM:
 if [[ ! -d ${HOME}/.nvm ]]; then
@@ -185,12 +175,24 @@ npm() {
   npm $@
 }
 # configure the shell environment for pyenv (Python version manager)
-pyenv_init () {
+#  https://mediaglasses.blog/managing-python-on-macos-big-sur-c120bfa34403
+#  https://github.com/pyenv/pyenv/wiki/Common-build-problems
+#  check  man xcode-select to see how to SET 
+#         sudo xcode-select -s /<path-to/xcode(-beta).app/Contents/Developer
+#  https://github.com/pyenv/pyenv/issues/1643
+#
+#  openssl 1.1 not supported for older python
+#    https://github.com/pyenv/pyenv/issues/950#issuecomment-575772777
+#    install openssl@1.0 -- https://github.com/rvm/rvm/issues/5018
+export CFLAGS="-I$(brew --prefix)/include -I$(brew --prefix sqlite3)/include -I$(brew --prefix bzip2)/include -I$(brew --prefix readline)/include -I$(xcrun --show-sdk-path)/usr/include"
+export CPPFLAGS="${CFLAGS}"
+export LDFLAGS="-L$(brew --prefix sqlite3)/lib -L$(brew --prefix openssl)/lib -L$(brew --prefix readline)/lib -L$(brew --prefix zlib)/lib -L$(brew --prefix bzip2)/lib"
+
 if command -v pyenv 1>/dev/null 2>&1; then
-    eval "$(pyenv init --path)"
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init --path)"
 fi
-}
-pyenv_init
 
 # install the latest LTS version for nvm
 # to avoid error 'nvm_list_aliases:36: no matches found: ~/.nvm/alias/lts/*'
@@ -206,3 +208,4 @@ compinit
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
+

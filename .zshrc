@@ -15,15 +15,17 @@ export PATH=/usr/local/sbin:/Users/vincentricci/Library/Python/2.7/bin:$PATH
 # - JAVA
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home
 # - PYENV
+#  https://github.com/pyenv/pyenv#basic-github-checkout
 #  https://github.com/pyenv/pyenv
+#  https://devguide.python.org/setup/#build-dependencies
 export PYENV_ROOT="${HOME}/.pyenv"
 export PATH="${PYENV_ROOT}/bin:$PATH"
 
 # zlib dependency - brew reinstall zlib and set the following ENV variables
 # https://stackoverflow.com/questions/34200602/the-python-zlib-extension-was-not-compiled-on-mac-os-x-10-11-1
-export LDFLAGS="-L/usr/local/opt/zlib/lib"
-export CPPFLAGS="-I/usr/local/opt/zlib/include"
-export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig"
+export CPPFLAGS="-I$(brew --prefix openssl)/include -I$(xcrun --show-sdk-path)/usr/include"
+export LDFLAGS="-L$(brew --prefix openssl)/lib"
+
 # - NVM:
 if [[ ! -d ${HOME}/.nvm ]]; then
   mkdir -p ${HOME}/.nvm
@@ -185,7 +187,7 @@ npm() {
 # configure the shell environment for pyenv (Python version manager)
 pyenv_init () {
 if command -v pyenv 1>/dev/null 2>&1; then
-    eval "$(pyenv init -)"
+    eval "$(pyenv init --path)"
 fi
 }
 pyenv_init

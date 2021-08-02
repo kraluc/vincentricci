@@ -11,7 +11,7 @@ export PATH=$HOME/bin:$PATH
 export PATH=/usr/bin/java:$PATH
 export PATH=/usr/local/Cellar:$PATH
 export PATH=/usr/local/sbin:/Users/vincentricci/Library/Python/2.7/bin:$PATH
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+#export PATH=/usr/local/opt/openssl@1.0/bin:$PATH
 
 # - JAVA
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home
@@ -153,7 +153,7 @@ cdl ()   { LAST_FOLDER="$(ls -c1 -rt | tail -1)" && cd ${LAST_FOLDER} } # go to 
 diffs () { diff -yw --suppress-common-lines "$@"; }  # display diff side by side
 mcd ()   { mkdir -p "$1" && cd "$1"; }              # makes new dir and jumps into it
 mansi () { man $1 | grep -iC2 --color=always $2 | less; } # mans: search man pages given an argument 1
-sshp () { ssh -o PreferredAuthentications=password "$@"; } # force password authentication (ignore Agent PubKey)
+sshp ()  { ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no "$@"; } # force password authentication
 tg ()    { open -a "/Applications/glogg.app" "$(pwd)/$@"; } # open new glogg session
 tk ()    { open -a "/Applications/klogg.app" "$(pwd)/$@"; } # open new klogg session
 # How to run nvm in .zsh - https://stackoverflow.com/questions/47009776/how-to-run-nvm-in-oh-my-zsh/47017363
@@ -184,9 +184,10 @@ npm() {
 #  openssl 1.1 not supported for older python
 #    https://github.com/pyenv/pyenv/issues/950#issuecomment-575772777
 #    install openssl@1.0 -- https://github.com/rvm/rvm/issues/5018
-export CFLAGS="-I$(brew --prefix)/include -I$(brew --prefix sqlite3)/include -I$(brew --prefix bzip2)/include -I$(brew --prefix readline)/include -I$(xcrun --show-sdk-path)/usr/include"
-export CPPFLAGS="${CFLAGS}"
-export LDFLAGS="-L$(brew --prefix sqlite3)/lib -L$(brew --prefix openssl)/lib -L$(brew --prefix readline)/lib -L$(brew --prefix zlib)/lib -L$(brew --prefix bzip2)/lib"
+#export CFLAGS="-I/usr/local/opt/openssl@1.0/include -I$(brew --prefix sqlite3)/include -I$(brew --prefix bzip2)/include -I$(brew --prefix readline)/include -I$(xcrun --show-sdk-path)/usr/include"
+#export CPPFLAGS="${CFLAGS}"
+#export LDFLAGS="-L$(brew --prefix sqlite3)/lib -L/usr/local/opt/openssl@1.0/lib -L$(brew --prefix readline)/lib -L$(brew --prefix zlib)/lib -L$(brew --prefix bzip2)/lib"
+#export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.0/lib/pkgconfig"
 
 if command -v pyenv 1>/dev/null 2>&1; then
   export PYENV_ROOT="$HOME/.pyenv"
@@ -209,3 +210,5 @@ compinit
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
+export PATH="/usr/local/opt/openssl@1.0/bin:$PATH"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"

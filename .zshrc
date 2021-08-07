@@ -207,7 +207,7 @@ fpath=(/opt/vagrant/embedded/gems/2.2.15/gems/vagrant-2.2.15/contrib/zsh $fpath)
 compinit
 # <<<<  Vagrant command completion (end)
 
-autoload -U +X bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
 export PATH="/usr/local/opt/openssl@1.0/bin:$PATH"

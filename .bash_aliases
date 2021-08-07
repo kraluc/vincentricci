@@ -42,6 +42,7 @@ alias calorcdn="lftp calo:calo@172.18.108.26"
 alias cat9K1='ssh admin@10.201.177.135'
 #alias cdl="cd $(ls -c1 -rt | tail -1)"
 alias cent="ssh vricci@172.16.31.8"
+alias centr="ssh admin@rtp-dcrs-centos8.cisco.com"
 alias chx='chmod +x'
 alias clean="egrep -v '(#|^$)' "
 alias cpuHogs='ps wwaxr -o pid,stat,%cpu,time,command | head -10'

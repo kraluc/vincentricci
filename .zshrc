@@ -108,7 +108,7 @@ plugins=(ansible docker docker-compose git colored-man-pages colorize osx pip py
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_rsa ansible_id_rsa 
 zstyle :omz:plugins:ssh-agent lifetime 4h
-
+autoload -Uz compinit && compinit
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -207,7 +207,6 @@ fpath=(/opt/vagrant/embedded/gems/2.2.15/gems/vagrant-2.2.15/contrib/zsh $fpath)
 compinit
 # <<<<  Vagrant command completion (end)
 
-autoload -Uz compinit && compinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
 export PATH="/usr/local/opt/openssl@1.0/bin:$PATH"

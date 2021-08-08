@@ -109,6 +109,8 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_rsa ansible_id_rsa 
 zstyle :omz:plugins:ssh-agent lifetime 4h
 autoload -Uz compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration

@@ -49,6 +49,7 @@ alias cpuHogs='ps wwaxr -o pid,stat,%cpu,time,command | head -10'
 alias csr1='ssh 192.168.56.101'
 alias dcnm1='ssh sysadmin@sj-dcrs-dcnm1.cisco.com'
 alias dcnm2='ssh sysadmin@sj-dcrs-dcnm2.cisco.com'
+alias dcnm="ssh sysadmin@rtp-dcrs-dcnm@cisco.com"
 alias ddu='du -sh * | sort -hr | head -20'
 alias dev='cd ~/Documents/Development && tree -L 1'
 alias deva='cd ~/Documents/Development/Ansible && tree -L 1'

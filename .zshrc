@@ -106,7 +106,7 @@ fi
 # ssh-agent plugin - see https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
 plugins=(ansible docker docker-compose git colored-man-pages colorize osx pip python brew ssh-agent vagrant virtualenv zsh-nvm zsh-autosuggestions zsh-completions)
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities id_rsa ansible_id_rsa 
+zstyle :omz:plugins:ssh-agent identities id_rsa ansible_id_rsa cx-dcrs_id_rsa 
 zstyle :omz:plugins:ssh-agent lifetime 4h
 autoload -Uz compinit && compinit
 autoload -U +X bashcompinit && bashcompinit

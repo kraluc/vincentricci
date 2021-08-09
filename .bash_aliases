@@ -187,6 +187,7 @@ alias ttahleaf49='telnet 172.16.113.19 2008'
 alias ttop='top -R -F -s 10 -o rsize'
 alias ucs='ssh -l ucspe 172.16.125.2'
 alias viz='open -a "/Applications/Visual Studio Code.app"'
+alias vncc2="ssh -Nf -L 5901:127.0.0.1:5901 -l vricci rtp-dcrs-centos8.cisco.com && open vnc://vricci@localhost:5901"
 alias vncc="ssh -Nf -L 5903:127.0.0.1:5903 -l vricci 172.16.31.8 && open vnc://vricci@localhost:5903"
 alias vnet='sudo vmnet-cli'
 alias vnet='sudo vmnet-cli'                                  # VMWare cli to control DHCP and NAT

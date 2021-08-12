@@ -8,10 +8,10 @@ fi
 # If you come from bash you might have to change your $PATH.
 #export PATH="/usr/local/opt/inetutils/libexec/gnubin:$PATH"
 export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.pyenv/bin:$PATH
 export PATH=/usr/bin/java:$PATH
 export PATH=/usr/local/Cellar:$PATH
 export PATH=/usr/local/sbin:/Users/vincentricci/Library/Python/2.7/bin:$PATH
-#export PATH=/usr/local/opt/openssl@1.0/bin:$PATH
 
 # - JAVA
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home
@@ -26,6 +26,10 @@ export NVM_LAZY_LOAD=true
 
 # - PIPENV: Ensure pipenv creates environment inside the current directory
 export PIPENV_VENV_IN_PROJECT="enabled"
+
+# PYENV - Must install *python-version dependent* patch from https://github.com/pyenv/pyenv/issues/1740
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
 
 # - zsh syntax highlight requires this (does not appear to source .zshenv)
 export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
@@ -177,25 +181,8 @@ npm() {
   npm $@
 }
 # configure the shell environment for pyenv (Python version manager)
-#  https://mediaglasses.blog/managing-python-on-macos-big-sur-c120bfa34403
-#  https://github.com/pyenv/pyenv/wiki/Common-build-problems
-#  check  man xcode-select to see how to SET 
-#         sudo xcode-select -s /<path-to/xcode(-beta).app/Contents/Developer
-#  https://github.com/pyenv/pyenv/issues/1643
-#
-#  openssl 1.1 not supported for older python
-#    https://github.com/pyenv/pyenv/issues/950#issuecomment-575772777
-#    install openssl@1.0 -- https://github.com/rvm/rvm/issues/5018
-#export CFLAGS="-I/usr/local/opt/openssl@1.0/include -I$(brew --prefix sqlite3)/include -I$(brew --prefix bzip2)/include -I$(brew --prefix readline)/include -I$(xcrun --show-sdk-path)/usr/include"
-#export CPPFLAGS="${CFLAGS}"
-#export LDFLAGS="-L$(brew --prefix sqlite3)/lib -L/usr/local/opt/openssl@1.0/lib -L$(brew --prefix readline)/lib -L$(brew --prefix zlib)/lib -L$(brew --prefix bzip2)/lib"
-#export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.0/lib/pkgconfig"
-
-if command -v pyenv 1>/dev/null 2>&1; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init --path)"
-fi
+# https://github.com/pyenv/pyenv#basic-github-checkout
+eval "$(pyenv init -)"
 
 # install the latest LTS version for nvm
 # to avoid error 'nvm_list_aliases:36: no matches found: ~/.nvm/alias/lts/*'

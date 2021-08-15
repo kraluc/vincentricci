@@ -1,0 +1,14 @@
+/*
+!/.gitignore
+!/.bash_aliases
+!/.bashrc
+!/.bash_profile
+!/.vimrc
+!/.zshrc
+!/.p10k.zsh
+!/.ssh/config
+!/images
+!/iTerm-Profiles.json
+!/.ssh/config
+images/Vincent.jpeg
+images/.DS_Store

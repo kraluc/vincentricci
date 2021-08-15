@@ -123,6 +123,7 @@ alias netCons='lsof -i'                                      # netCons:
 alias ns1='ssh -l vincentricci 172.16.139.131'               # DNS master server in 9Kv topo
 alias ns2='ssh -l vincentricci 172.16.139.132'               # DNS slave  server in 9Kv topo. also ldap server
 alias nxapi='ssh nxapi-user@172.16.31.8'
+alias old='ssh 10.19.50.197'
 alias openPorts='sudo lsof -i | grep LISTEN'                 # openPorts: All listening connections
 alias otv10='ssh vricci@14.2.86.10'
 alias otv11='ssh vricci@14.2.86.11'

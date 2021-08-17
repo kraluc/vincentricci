@@ -9,6 +9,7 @@ alias 7kflow="ssh admin@10.122.176.46"
 alias 9kv='ssh -i ~/.ssh/id_rsa admin@172.16.139.139'
 alias 9kv='ssh -i ~/.ssh/id_rsa admin@172.16.139.139'        # NXOSv in 9Kv topo
 alias acl='python /Users/admin/Development/PYTHON/Python3.7/acls/aclgen.py'
+smrtr=ssh admin@rtp-dcrs-licensing.cisco.com'
 alias ans='cd /Users/vricci/Documents/Development/Ansible/ansible-sj-static && pipenv shell'
 #alias ansi2='ssh -l admin rtp-dcrs-ansible.cisco.com -t /bin/zsh -ic "ansi"'
 alias ansi2='ssh -l admin rtp-dcrs-ansible.cisco.com'

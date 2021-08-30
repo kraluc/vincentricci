@@ -182,7 +182,7 @@ npm() {
 }
 # configure the shell environment for pyenv (Python version manager)
 # https://github.com/pyenv/pyenv#basic-github-checkout
-eval "$(pyenv init -)"
+#eval "$(pyenv init -)"
 
 # install the latest LTS version for nvm
 # to avoid error 'nvm_list_aliases:36: no matches found: ~/.nvm/alias/lts/*'

@@ -1,3 +1,4 @@
+alias ucsh='ssh -l ucspe 192.168.56.3'
 alias ..='cd ..'
 alias 56leaf57='ssh ansible@14.2.86.57'
 alias 56leaf58='ssh ansible@14.2.86.58'

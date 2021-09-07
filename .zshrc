@@ -153,6 +153,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Custom Functions
+bashman () { man bash | less -p "^^       $1 "; }
 cd ()    { builtin cd "$@" ; echo "truncated content" ; ltt; }     # change to dir and lists latest content tail
 ct ()     { builtin cd "$@" && tree -a -L 1; }  # change to dir and tree
 cdl ()   { LAST_FOLDER="$(ls -c1 -rt | tail -1)" && cd ${LAST_FOLDER} } # go to the last modified directory
@@ -182,8 +183,9 @@ npm() {
 }
 # configure the shell environment for pyenv (Python version manager)
 # https://github.com/pyenv/pyenv#basic-github-checkout
-#eval "$(pyenv init -)"
-
+# https://github.com/pyenv/pyenv
+eval "$(pyenv init -)"
+ 
 # install the latest LTS version for nvm
 # to avoid error 'nvm_list_aliases:36: no matches found: ~/.nvm/alias/lts/*'
 #nvm install --lts && nvm use --lts

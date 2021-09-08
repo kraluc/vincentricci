@@ -184,3 +184,4 @@ alias wget='curl -O'
 alias wire='open -n /Applications/Wireshark.app'             # open multiple Wireshark sessions
 alias wolbgw100='ssh ansible@14.2.86.100'
 alias wolbgw101='ssh ansible@14.2.86.101'
+alias cacert='ssh ca-user@rtp-dcrs-ca.cisco.com'

@@ -108,7 +108,7 @@ if [[ ! -d "${HOME}/.oh-my-zsh/custom/plugins/zsh-nvm" ]]; then
     git clone https://github.com/lukechilds/zsh-nvm.git ${HOME}/.oh-my-zsh/custom/plugins/zsh-nvm
 fi
 # ssh-agent plugin - see https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
-plugins=(ansible terraform docker docker-compose git colored-man-pages colorize osx pip python brew ssh-agent vagrant virtualenv zsh-nvm zsh-autosuggestions zsh-completions)
+plugins=(ansible aws terraform docker docker-compose git colored-man-pages colorize macos pip python brew ssh-agent vagrant virtualenv zsh-nvm zsh-autosuggestions zsh-completions)
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_rsa ansible_id_rsa
 zstyle :omz:plugins:ssh-agent lifetime 4h
@@ -160,9 +160,10 @@ cdl ()   { LAST_FOLDER="$(ls -c1 -rt | tail -1)" && cd ${LAST_FOLDER} } # go to 
 diffs () { diff -yw --suppress-common-lines "$@"; }  # display diff side by side
 mcd ()   { mkdir -p "$1" && cd "$1"; }              # makes new dir and jumps into it
 mansi () { man $1 | grep -iC2 --color=always $2 | less; } # mans: search man pages given an argument 1
+md5sum() { /sbin/md5 -r "$@"; } # md5 -r displays the same output format as md5sum 
 sshp ()  { ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no "$@"; } # force password authentication
 tg ()    { open -a "/Applications/glogg.app" "$(pwd)/$@"; } # open new glogg session
-tk ()    { open -a "/Applications/klogg.app" "$(pwd)/$@"; } # open new klogg session
+tk ()    { open -a "/Applications/klogg.app" "./$@"; } # open new klogg session
 # How to run nvm in .zsh - https://stackoverflow.com/questions/47009776/how-to-run-nvm-in-oh-my-zsh/47017363
 lazynvm() {
   unset -f nvm node npm
@@ -185,6 +186,7 @@ npm() {
 # https://github.com/pyenv/pyenv#basic-github-checkout
 # https://github.com/pyenv/pyenv
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
  
 # install the latest LTS version for nvm
 # to avoid error 'nvm_list_aliases:36: no matches found: ~/.nvm/alias/lts/*'
@@ -202,3 +204,7 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 
 export PATH="/usr/local/opt/openssl@1.0/bin:$PATH"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+
+##  NOTES
+#  brew install zsh breaks VSCODE integrated Terminal with "excpv(3) Permission denied"
+#  https://www.gitmemory.com/issue/microsoft/vscode/126017/860880456

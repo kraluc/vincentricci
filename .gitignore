@@ -5,6 +5,7 @@
 !/.bash_profile
 !/.vimrc
 !/.zshrc
+!/.zprofile
 !/.p10k.zsh
 !/.ssh/config
 !/images

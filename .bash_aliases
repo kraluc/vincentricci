@@ -13,6 +13,7 @@ alias ans='cd /Users/vricci/Documents/Development/Ansible/ansible-sj-static && p
 alias ansi2='ssh -t -l admin rtp-dcrs-ansible.cisco.com -t /bin/zsh -ic "ansi"'
 alias ansi='ssh -t -l admin 14.2.86.117 -t /bin/zsh -ic "ansi"'  # Run remote alias with pseudo-terminal - https://www.cyberciti.biz/faq/use-bash-aliases-ssh-based-session/
 alias as='cd ~/Library/services'
+alias axhost1='ssh 10.122.176.11'
 alias axleaf5='ssh 10.122.176.95'
 alias axleaf6='ssh 10.122.176.65'
 alias axleaf7='ssh 10.122.176.52'

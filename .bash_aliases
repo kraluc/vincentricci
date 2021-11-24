@@ -76,6 +76,7 @@ alias gx='ssh admin@10.122.165.214'
 alias healeaf93='ssh ansible@14.2.86.93'
 alias healeaf94='ssh ansible@14.2.86.94'
 alias host1='ssh -l vincentricci 172.16.17.140'             # CentOS7
+alias idle="python -m idlelib &"
 alias ipen0='ipconfig getpacket en0'
 alias ipen3='ipconfig getpacket en3'
 alias ise3='ssh ansible@rtp-dcrs-ise3.cisco.com'

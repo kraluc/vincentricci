@@ -31,7 +31,10 @@ export PIPENV_VENV_IN_PROJECT="enabled"
 export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
 export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
 
-# - PYTHON REPL: Customize your Python interpreter - see https://realpython.com/effective-python-environment/
+# - PYTHON 
+#export PYTHONPATH="${HOME}/Documents/Development/PYTHON"
+
+# - PYTHON  REPL: Customize your Python interpreter - see https://realpython.com/effective-python-environment/
 export PYTHONSTARTUP="${HOME}/.pystartup"
 
 # - zsh syntax highlight requires this (does not appear to source .zshenv)

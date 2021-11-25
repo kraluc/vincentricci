@@ -27,9 +27,12 @@ export NVM_LAZY_LOAD=true
 # - PIPENV: Ensure pipenv creates environment inside the current directory
 export PIPENV_VENV_IN_PROJECT="enabled"
 
-# PYENV - Must install *python-version dependent* patch from https://github.com/pyenv/pyenv/issues/1740
+# - PYENV - Must install *python-version dependent* patch from https://github.com/pyenv/pyenv/issues/1740
 export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
 export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
+
+# - PYTHON REPL: Customize your Python interpreter - see https://realpython.com/effective-python-environment/
+export PYTHONSTARTUP="${HOME}/.pystartup"
 
 # - zsh syntax highlight requires this (does not appear to source .zshenv)
 export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters

@@ -10,9 +10,11 @@ fi
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.pyenv/bin:$PATH
 export PATH=/usr/bin/java:$PATH
-export PATH=/usr/local/Cellar:$PATH
-export PATH=/usr/local/sbin:/Users/vincentricci/Library/Python/2.7/bin:$PATH
-
+# macOS specific PATH
+if [[ -d /usr/local/Cellar ]]; then
+    export PATH=/usr/local/Cellar:$PATH
+    export PATH=/usr/local/sbin:i$HOME/Library/Python/2.7/bin:$PATH
+fi
 # - JAVA
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home
 

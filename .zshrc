@@ -13,7 +13,7 @@ export PATH=/usr/bin/java:$PATH
 # macOS specific PATH
 if [[ -d /usr/local/Cellar ]]; then
     export PATH=/usr/local/Cellar:$PATH
-    export PATH=/usr/local/sbin:i$HOME/Library/Python/2.7/bin:$PATH
+    export PATH=/usr/local/sbin:$HOME/Library/Python/2.7/bin:$PATH
 fi
 # - JAVA
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home

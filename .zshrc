@@ -15,6 +15,10 @@ if [[ -d /usr/local/Cellar ]]; then
     export PATH=/usr/local/Cellar:$PATH
     export PATH=/usr/local/sbin:$HOME/Library/Python/2.7/bin:$PATH
 fi
+# openssl PATH
+export PATH="/usr/local/opt/openssl@1.0/bin:$PATH"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+export PATH="/usr/local/opt/openssl@3/bin:$PATH"
 # - JAVA
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home
 
@@ -212,9 +216,6 @@ compinit
 
 complete -o nospace -C /usr/local/bin/terraform terraform
 
-export PATH="/usr/local/opt/openssl@1.0/bin:$PATH"
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-export PATH="/usr/local/opt/openssl@3/bin:$PATH"
 ##  NOTES
 #  brew install zsh breaks VSCODE integrated Terminal with "excpv(3) Permission denied"
 #  https://www.gitmemory.com/issue/microsoft/vscode/126017/860880456

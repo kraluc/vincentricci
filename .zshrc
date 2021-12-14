@@ -35,7 +35,7 @@ export PIPENV_VENV_IN_PROJECT="enabled"
 
 # - PYENV - Must install *python-version dependent* patch from https://github.com/pyenv/pyenv/issues/1740
 # - OPENSSL@3 - from homebrew install
-export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/libi -L/usr/local/opt/openssl@3/lib"
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib -L/usr/local/opt/openssl@3/lib"
 export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include -I/usr/local/opt/openssl@3/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl@3/lib/pkgconfig"
 
@@ -174,8 +174,9 @@ cdl ()   { LAST_FOLDER="$(ls -c1 -rt | tail -1)" && cd ${LAST_FOLDER} } # go to 
 diffs () { diff -yw --suppress-common-lines "$@"; }  # display diff side by side
 mcd ()   { mkdir -p "$1" && cd "$1"; }              # makes new dir and jumps into it
 mansi () { man $1 | grep -iC2 --color=always $2 | less; } # mans: search man pages given an argument 1
-md5sum() { /sbin/md5 -r "$@"; } # md5 -r displays the same output format as md5sum 
-sshp ()  { ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no "$@"; } # force password authentication
+md5sum () { /sbin/md5 -r "$@"; } # md5 -r displays the same output format as md5sum 
+ssh509 () { /usr/local/bin/ssh "$@"; }
+sshp ()  { /usr/bin/ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no "$@"; } # force password authentication0
 tg ()    { open -a "/Applications/glogg.app" "$(pwd)/$@"; } # open new glogg session
 tk ()    { open -a "/Applications/klogg.app" "./$@"; } # open new klogg session
 # How to run nvm in .zsh - https://stackoverflow.com/questions/47009776/how-to-run-nvm-in-oh-my-zsh/47017363

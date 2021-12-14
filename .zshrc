@@ -30,8 +30,10 @@ export NVM_LAZY_LOAD=true
 export PIPENV_VENV_IN_PROJECT="enabled"
 
 # - PYENV - Must install *python-version dependent* patch from https://github.com/pyenv/pyenv/issues/1740
-export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
-export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
+# - OPENSSL@3 - from homebrew install
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/libi -L/usr/local/opt/openssl@3/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include -I/usr/local/opt/openssl@3/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl@3/lib/pkgconfig"
 
 # - PYTHON 
 #export PYTHONPATH="${HOME}/Documents/Development/PYTHON"
@@ -212,7 +214,7 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 
 export PATH="/usr/local/opt/openssl@1.0/bin:$PATH"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-
+export PATH="/usr/local/opt/openssl@3/bin:$PATH"
 ##  NOTES
 #  brew install zsh breaks VSCODE integrated Terminal with "excpv(3) Permission denied"
 #  https://www.gitmemory.com/issue/microsoft/vscode/126017/860880456

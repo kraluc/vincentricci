@@ -152,7 +152,6 @@ alias spine51="ssh ansible@14.2.86.51"
 alias spine52="ssh ansible@14.2.86.52"
 alias spine95='ssh ansible@14.2.86.95'
 alias sr='cd ~/Documents/Notebooks/Current-case && ltt'
-alias ssh='TERM=xterm ssh'  # when remote term does not support colors
 alias ssmp='ssh admin@172.16.31.3'
 alias t1='tree -a -L 1'
 alias t2='ssh ansible@14.2.86.42'

@@ -16,6 +16,7 @@ if [[ -d /usr/local/Cellar ]]; then
     export PATH=/usr/local/sbin:$HOME/Library/Python/2.7/bin:$PATH
 fi
 # openssl PATH
+# using default - compiled from source /usr/local/bin/openssl
 export PATH="/usr/local/opt/openssl@1.0/bin:$PATH"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export PATH="/usr/local/opt/openssl@3/bin:$PATH"
@@ -35,8 +36,14 @@ export PIPENV_VENV_IN_PROJECT="enabled"
 
 # - PYENV - Must install *python-version dependent* patch from https://github.com/pyenv/pyenv/issues/1740
 # - OPENSSL@3 - from homebrew install
+#export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib -L/usr/local/lib/"
+#export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib -L/usr/local/opt/openssl@1.1/lib"
 export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib -L/usr/local/opt/openssl@3/lib"
+#export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include -I/usr/local/include"
+#export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include -I/usr/local/opt/openssl@1.1/include"
 export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include -I/usr/local/opt/openssl@3/include"
+#export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
+#export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl@3/lib/pkgconfig"
 
 # - PYTHON 
@@ -154,7 +161,7 @@ export HISTSIZE=1000
 # fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+export ARCHFLAGS="-arch x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh

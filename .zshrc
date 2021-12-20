@@ -182,7 +182,7 @@ diffs () { diff -yw --suppress-common-lines "$@"; }  # display diff side by side
 mcd ()   { mkdir -p "$1" && cd "$1"; }              # makes new dir and jumps into it
 mansi () { man $1 | grep -iC2 --color=always $2 | less; } # mans: search man pages given an argument 1
 md5sum () { /sbin/md5 -r "$@"; } # md5 -r displays the same output format as md5sum 
-ssh509 () { /usr/local/bin/ssh "$@"; }
+ssh509 () { /usr/local/bin/ssh -oPubkeyAcceptedAlgorithms=x509v3-sign-rsa "$@"; }
 sshp ()  { /usr/bin/ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no "$@"; } # force password authentication0
 tg ()    { open -a "/Applications/glogg.app" "$(pwd)/$@"; } # open new glogg session
 tk ()    { open -a "/Applications/klogg.app" "./$@"; } # open new klogg session

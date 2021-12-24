@@ -19,7 +19,7 @@ fi
 # using default - compiled from source /usr/local/bin/openssl
 export PATH="/usr/local/opt/openssl@1.0/bin:$PATH"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-export PATH="/usr/local/opt/openssl@3/bin:$PATH"
+#export PATH="/usr/local/opt/openssl@3/bin:$PATH"
 # - JAVA
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home
 
@@ -37,19 +37,20 @@ export PIPENV_VENV_IN_PROJECT="enabled"
 # - PYENV - Must install *python-version dependent* patch from https://github.com/pyenv/pyenv/issues/1740
 # - OPENSSL@3 - from homebrew install
 #export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib -L/usr/local/lib/"
-#export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib -L/usr/local/opt/openssl@1.1/lib"
-export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib -L/usr/local/opt/openssl@3/lib"
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib -L/usr/local/opt/openssl@1.1/lib"
+#export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib -L/usr/local/opt/openssl@3/lib"
 #export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include -I/usr/local/include"
-#export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include -I/usr/local/opt/openssl@1.1/include"
-export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include -I/usr/local/opt/openssl@3/include"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include -I/usr/local/opt/openssl@1.1/include"
+#export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include -I/usr/local/opt/openssl@3/include"
 #export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
-#export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
-export PKG_CONFIG_PATH="/usr/local/opt/openssl@3/lib/pkgconfig"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
+#export PKG_CONFIG_PATH="/usr/local/opt/openssl@3/lib/pkgconfig"
 
 # - PYTHON 
-#export PYTHONPATH="${HOME}/Documents/Development/PYTHON"
-
-# - PYTHON  REPL: Customize your Python interpreter - see https://realpython.com/effective-python-environment/
+export PYTHONPATH="${HOME}/Documents/Development/PYTHON"
+#- suppress __pycache__ (slower loading)
+export PYTHONDONTWRITEBYTECODE=1
+#- PYTHON  REPL: Customize your Python interpreter - see https://realpython.com/effective-python-environment/
 export PYTHONSTARTUP="${HOME}/.pystartup"
 
 # - zsh syntax highlight requires this (does not appear to source .zshenv)
@@ -129,10 +130,11 @@ if [[ ! -d "${HOME}/.oh-my-zsh/custom/plugins/zsh-nvm" ]]; then
     git clone https://github.com/lukechilds/zsh-nvm.git ${HOME}/.oh-my-zsh/custom/plugins/zsh-nvm
 fi
 # ssh-agent plugin - see https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
-plugins=(ansible aws terraform docker docker-compose git colored-man-pages colorize macos pip python brew ssh-agent vagrant virtualenv zsh-nvm zsh-autosuggestions zsh-completions)
-zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities id_rsa ansible_id_rsa
-zstyle :omz:plugins:ssh-agent lifetime 4h
+#plugins=(ansible aws terraform docker docker-compose git colored-man-pages colorize macos pip python brew ssh-agent vagrant virtualenv zsh-nvm zsh-autosuggestions zsh-completions)
+plugins=(ansible aws terraform docker docker-compose git colored-man-pages colorize macos pip python brew vagrant virtualenv zsh-nvm zsh-autosuggestions zsh-completions)
+#zstyle :omz:plugins:ssh-agent agent-forwarding on
+#zstyle :omz:plugins:ssh-agent identities id_rsa ansible_id_rsa
+#zstyle :omz:plugins:ssh-agent lifetime 4h
 autoload -Uz compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 

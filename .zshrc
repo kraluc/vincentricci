@@ -46,7 +46,8 @@ export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include -I
 export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 #export PKG_CONFIG_PATH="/usr/local/opt/openssl@3/lib/pkgconfig"
 
-# - PYTHON 
+# - PYTHON
+# DO NOT set the Python PATH here 
 export PYTHONPATH="${HOME}/Documents/Development/PYTHON"
 #- suppress __pycache__ (slower loading)
 export PYTHONDONTWRITEBYTECODE=1
@@ -132,9 +133,9 @@ fi
 # ssh-agent plugin - see https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
 #plugins=(ansible aws terraform docker docker-compose git colored-man-pages colorize macos pip python brew ssh-agent vagrant virtualenv zsh-nvm zsh-autosuggestions zsh-completions)
 plugins=(ansible aws terraform docker docker-compose git colored-man-pages colorize macos pip python brew vagrant virtualenv zsh-nvm zsh-autosuggestions zsh-completions)
-#zstyle :omz:plugins:ssh-agent agent-forwarding on
-#zstyle :omz:plugins:ssh-agent identities id_rsa ansible_id_rsa
-#zstyle :omz:plugins:ssh-agent lifetime 4h
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+zstyle :omz:plugins:ssh-agent identities id_rsa ansible_id_rsa x509-user_id_rsa
+zstyle :omz:plugins:ssh-agent lifetime 4h
 autoload -Uz compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 
@@ -177,17 +178,17 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # Custom Functions
 bashman () { man bash | less -p "^^       $1 "; }
-cd ()    { builtin cd "$@" ; echo "truncated content" ; ltt; }     # change to dir and lists latest content tail
-ct ()     { builtin cd "$@" && tree -a -L 1; }  # change to dir and tree
-cdl ()   { LAST_FOLDER="$(ls -c1 -rt | tail -1)" && cd ${LAST_FOLDER} } # go to the last modified directory
-diffs () { diff -yw --suppress-common-lines "$@"; }  # display diff side by side
-mcd ()   { mkdir -p "$1" && cd "$1"; }              # makes new dir and jumps into it
-mansi () { man $1 | grep -iC2 --color=always $2 | less; } # mans: search man pages given an argument 1
-md5sum () { /sbin/md5 -r "$@"; } # md5 -r displays the same output format as md5sum 
-ssh509 () { /usr/local/bin/ssh -oPubkeyAcceptedAlgorithms=x509v3-sign-rsa "$@"; }
-sshp ()  { /usr/bin/ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no "$@"; } # force password authentication0
-tg ()    { open -a "/Applications/glogg.app" "$(pwd)/$@"; } # open new glogg session
-tk ()    { open -a "/Applications/klogg.app" "./$@"; } # open new klogg session
+cd ()      { builtin cd "$@" ; echo "truncated content" ; ltt; }     # change to dir and lists latest content tail
+ct ()      { builtin cd "$@" && tree -a -L 1; }  # change to dir and tree
+cdl ()     { LAST_FOLDER="$(ls -c1 -rt | tail -1)" && cd ${LAST_FOLDER} } # go to the last modified directory
+diffs ()   { diff -yw --suppress-common-lines "$@"; }  # display diff side by side
+mcd ()     { mkdir -p "$1" && cd "$1"; }              # makes new dir and jumps into it
+mansi ()   { man $1 | grep -iC2 --color=always $2 | less; } # mans: search man pages given an argument 1
+md5sum ()  { /sbin/md5 -r "$@"; } # md5 -r displays the same output format as md5sum 
+ssh509 ()  { /usr/local/bin/ssh509 -F ~/.ssh/x509_config -oPubkeyAcceptedAlgorithms=x509v3-sign-rsa "$@"; }
+sshp ()    { /usr/bin/ssh -F ~/.ssh/config -o PreferredAuthentications=password -o PubkeyAuthentication=no "$@"; } # force password authentication0
+tg ()     { open -a "/Applications/glogg.app" "$(pwd)/$@"; } # open new glogg session
+tk ()     { open -a "/Applications/klogg.app" "./$@"; } # open new klogg session
 # How to run nvm in .zsh - https://stackoverflow.com/questions/47009776/how-to-run-nvm-in-oh-my-zsh/47017363
 lazynvm() {
   unset -f nvm node npm

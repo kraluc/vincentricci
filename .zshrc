@@ -132,7 +132,7 @@ if [[ ! -d "${HOME}/.oh-my-zsh/custom/plugins/zsh-nvm" ]]; then
 fi
 # ssh-agent plugin - see https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
 #plugins=(ansible aws terraform docker docker-compose git colored-man-pages colorize macos pip python brew ssh-agent vagrant virtualenv zsh-nvm zsh-autosuggestions zsh-completions)
-plugins=(ansible aws terraform docker docker-compose git colored-man-pages colorize macos pip python brew vagrant virtualenv zsh-nvm zsh-autosuggestions zsh-completions)
+plugins=(ansible aws terraform docker docker-compose git colored-man-pages colorize macos pip python brew vagrant virtualenv zsh-nvm zsh-autosuggestions zsh-completions globalias)
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_rsa ansible_id_rsa x509-user_id_rsa
 zstyle :omz:plugins:ssh-agent lifetime 4h

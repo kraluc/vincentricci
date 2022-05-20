@@ -211,3 +211,6 @@ alias wget='curl -O'
 alias wire='open -n /Applications/Wireshark.app'             # open multiple Wireshark sessions
 alias wolbgw100='ssh ansible@14.2.86.100'
 alias wolbgw101='ssh ansible@14.2.86.101'
+alias nat9k='ssh -l admin 10.122.164.121'
+alias natTx='ssh -l admin 10.122.164.73'
+alias natRx='ssh -l admin 10.122.164.79'

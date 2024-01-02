@@ -129,10 +129,6 @@ if [[ ! -d "${HOME}/.oh-my-zsh/custom/plugins/zsh-nvm" ]]; then
     git clone https://github.com/lukechilds/zsh-nvm.git ${HOME}/.oh-my-zsh/custom/plugins/zsh-nvm
 fi
 # ssh-agent plugin - see https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
-<<<<<<< HEAD
-#plugins=(ansible aws terraform docker docker-compose git colored-man-pages colorize macos pip python brew ssh-agent vagrant virtualenv zsh-nvm zsh-autosuggestions zsh-completions)
-plugins=(ansible aws terraform docker docker-compose git colored-man-pages colorize macos pip python brew vagrant virtualenv zsh-nvm zsh-autosuggestions zsh-completions globalias)
-=======
 #plugins=(ansible aws terraform git colored-man-pages colorize macos pip python brew ssh-agent vagrant virtualenv zsh-nvm zsh-autosuggestions zsh-completions)
 plugins=(
   ansible 
@@ -149,7 +145,6 @@ plugins=(
   fast-syntax-highlighting
   zsh-autocomplete
 )
->>>>>>> 4b6ed94 (updated for M3)
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_rsa ansible_id_rsa x509-user_id_rsa
 zstyle :omz:plugins:ssh-agent lifetime 4h
@@ -237,11 +232,9 @@ npm() {
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-
-# >>>> Vagrant command completion (start)
+# Vagrant completion
 fpath=(/opt/vagrant/embedded/gems/2.2.15/gems/vagrant-2.2.15/contrib/zsh $fpath)
 compinit
-# <<<<  Vagrant command completion (end)
 
 complete -o nospace -C /usr/local/bin/terraform terraform
 

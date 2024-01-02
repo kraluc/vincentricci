@@ -257,6 +257,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 #GITSTATUS_LOG_LEVEL=DEBUG
-source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
+# source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
 # References to protect private email in github
 # https://stackoverflow.com/questions/43863522/error-your-push-would-publish-a-private-email-address

@@ -263,3 +263,5 @@ unset __conda_setup
 # https://community.netgear.com/t5/Nighthawk-Wi-Fi-5-AC-Routers/OpenVPN-on-iPhone-fails-to-import-profile-for-NightHawk-R700P/td-p/1995576
 # 2. how to protect private email in github
 # https://stackoverflow.com/questions/43863522/error-your-push-would-publish-a-private-email-address
+# 3. Fix homebrew install for Apple Silicon
+# https://osxdaily.com/2021/02/06/installing-homebrew-apple-silicon-mac-native/

@@ -5,19 +5,17 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
-#export PATH="/usr/local/opt/inetutils/libexec/gnubin:$PATH"
+# https://techpp.com/2021/09/13/reset-path-variable-on-mac-guide/
 export PATH=$HOME/bin:$PATH
-export PATH=$HOME/.pyenv/bin:$PATH
 export PATH=/usr/bin/java:$PATH
 # macOS specific PATH
 if [[ -d /usr/local/Cellar ]]; then
     export PATH=/usr/local/Cellar:$PATH
-    export PATH=/usr/local/sbin:$HOME/Library/Python/2.7/bin:$PATH
+    export PATH=/usr/local/sbin:$PATH
 fi
 # openssl PATH
 # using default - compiled from source /usr/local/bin/openssl
-export PATH="/usr/local/opt/openssl@1.0/bin:$PATH"
+#export PATH="/usr/local/opt/openssl@1.0/bin:$PATH"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 #export PATH="/usr/local/opt/openssl@3/bin:$PATH"
 # - JAVA
@@ -52,7 +50,7 @@ export PYTHONPATH="${HOME}/Documents/Development/PYTHON"
 #- suppress __pycache__ (slower loading)
 export PYTHONDONTWRITEBYTECODE=1
 #- PYTHON  REPL: Customize your Python interpreter - see https://realpython.com/effective-python-environment/
-export PYTHONSTARTUP="${HOME}/.pystartup"
+#export PYTHONSTARTUP="${HOME}/.pystartup"
 
 # - zsh syntax highlight requires this (does not appear to source .zshenv)
 export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
@@ -131,14 +129,34 @@ if [[ ! -d "${HOME}/.oh-my-zsh/custom/plugins/zsh-nvm" ]]; then
     git clone https://github.com/lukechilds/zsh-nvm.git ${HOME}/.oh-my-zsh/custom/plugins/zsh-nvm
 fi
 # ssh-agent plugin - see https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
+<<<<<<< HEAD
 #plugins=(ansible aws terraform docker docker-compose git colored-man-pages colorize macos pip python brew ssh-agent vagrant virtualenv zsh-nvm zsh-autosuggestions zsh-completions)
 plugins=(ansible aws terraform docker docker-compose git colored-man-pages colorize macos pip python brew vagrant virtualenv zsh-nvm zsh-autosuggestions zsh-completions globalias)
+=======
+#plugins=(ansible aws terraform git colored-man-pages colorize macos pip python brew ssh-agent vagrant virtualenv zsh-nvm zsh-autosuggestions zsh-completions)
+plugins=(
+  ansible 
+  aws terraform
+  brew 
+  docker docker-compose 
+  git colored-man-pages colorize 
+  macos nmap 
+  pip python 
+  vagrant virtualenv 
+  zsh-nvm 
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  fast-syntax-highlighting
+  zsh-autocomplete
+)
+>>>>>>> 4b6ed94 (updated for M3)
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_rsa ansible_id_rsa x509-user_id_rsa
 zstyle :omz:plugins:ssh-agent lifetime 4h
 autoload -Uz compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -210,8 +228,8 @@ npm() {
 # configure the shell environment for pyenv (Python version manager)
 # https://github.com/pyenv/pyenv#basic-github-checkout
 # https://github.com/pyenv/pyenv
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+#eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
  
 # install the latest LTS version for nvm
 # to avoid error 'nvm_list_aliases:36: no matches found: ~/.nvm/alias/lts/*'
@@ -230,3 +248,20 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 ##  NOTES
 #  brew install zsh breaks VSCODE integrated Terminal with "excpv(3) Permission denied"
 #  https://www.gitmemory.com/issue/microsoft/vscode/126017/860880456
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/vincentricci/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/vincentricci/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/vincentricci/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/vincentricci/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+#GITSTATUS_LOG_LEVEL=DEBUG
+source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme

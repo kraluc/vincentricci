@@ -258,5 +258,8 @@ unset __conda_setup
 # <<< conda initialize <<<
 #GITSTATUS_LOG_LEVEL=DEBUG
 # source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
-# References to protect private email in github
+## References
+# 1. correct way to define .ovpn profile
+# https://community.netgear.com/t5/Nighthawk-Wi-Fi-5-AC-Routers/OpenVPN-on-iPhone-fails-to-import-profile-for-NightHawk-R700P/td-p/1995576
+# 2. how to protect private email in github
 # https://stackoverflow.com/questions/43863522/error-your-push-would-publish-a-private-email-address

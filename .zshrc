@@ -148,8 +148,6 @@ plugins=(
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_rsa ansible_id_rsa x509-user_id_rsa
 zstyle :omz:plugins:ssh-agent lifetime 4h
-autoload -Uz compinit && compinit
-autoload -U +X bashcompinit && bashcompinit
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
@@ -231,12 +229,6 @@ npm() {
 #nvm install --lts && nvm use --lts
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# Vagrant completion
-fpath=(/opt/vagrant/embedded/gems/2.2.15/gems/vagrant-2.2.15/contrib/zsh $fpath)
-compinit
-
-complete -o nospace -C /usr/local/bin/terraform terraform
 
 ##  NOTES
 #  brew install zsh breaks VSCODE integrated Terminal with "excpv(3) Permission denied"

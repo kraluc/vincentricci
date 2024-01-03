@@ -8,10 +8,16 @@ fi
 # https://techpp.com/2021/09/13/reset-path-variable-on-mac-guide/
 export PATH=$HOME/bin:$PATH
 export PATH=/usr/bin/java:$PATH
-# macOS specific PATH
+# macOS  Intel specific PATH
 if [[ -d /usr/local/Cellar ]]; then
     export PATH=/usr/local/Cellar:$PATH
     export PATH=/usr/local/sbin:$PATH
+fi
+if [[ -d /opt/homebrew ]]; then
+    export PATH=/opt/homebrew:$PATH
+    export PATH=/opt/homebrew/sbin:$PATH
+    # node@14
+    # export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
 fi
 # openssl PATH
 # using default - compiled from source /usr/local/bin/openssl
@@ -72,7 +78,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -143,13 +149,13 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   fast-syntax-highlighting
-  zsh-autocomplete
+  #zsh-autocomplete
 )
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_rsa ansible_id_rsa x509-user_id_rsa
 zstyle :omz:plugins:ssh-agent lifetime 4h
-autoload -Uz compinit && compinit
-autoload -U +X bashcompinit && bashcompinit
+#autoload -Uz compinit && compinit
+#autoload -U +X bashcompinit && bashcompinit
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
@@ -177,7 +183,7 @@ export HISTSIZE=1000
 # fi
 
 # Compilation flags
-export ARCHFLAGS="-arch x86_64"
+export ARCHFLAGS="-arch arm64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -234,13 +240,23 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # Vagrant completion
 fpath=(/opt/vagrant/embedded/gems/2.2.15/gems/vagrant-2.2.15/contrib/zsh $fpath)
-compinit
+#compinit
 
 complete -o nospace -C /usr/local/bin/terraform terraform
 
 ##  NOTES
 #  brew install zsh breaks VSCODE integrated Terminal with "excpv(3) Permission denied"
 #  https://www.gitmemory.com/issue/microsoft/vscode/126017/860880456
+
+#GITSTATUS_LOG_LEVEL=DEBUG
+# source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
+## References
+# 1. correct way to define .ovpn profile
+# https://community.netgear.com/t5/Nighthawk-Wi-Fi-5-AC-Routers/OpenVPN-on-iPhone-fails-to-import-profile-for-NightHawk-R700P/td-p/1995576
+# 2. how to protect private email in github
+# https://stackoverflow.com/questions/43863522/error-your-push-would-publish-a-private-email-address
+# 3. Fix homebrew install for Apple Silicon
+# https://osxdaily.com/2021/02/06/installing-homebrew-apple-silicon-mac-native/
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -256,12 +272,4 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-#GITSTATUS_LOG_LEVEL=DEBUG
-# source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
-## References
-# 1. correct way to define .ovpn profile
-# https://community.netgear.com/t5/Nighthawk-Wi-Fi-5-AC-Routers/OpenVPN-on-iPhone-fails-to-import-profile-for-NightHawk-R700P/td-p/1995576
-# 2. how to protect private email in github
-# https://stackoverflow.com/questions/43863522/error-your-push-would-publish-a-private-email-address
-# 3. Fix homebrew install for Apple Silicon
-# https://osxdaily.com/2021/02/06/installing-homebrew-apple-silicon-mac-native/
+

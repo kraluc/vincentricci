@@ -143,6 +143,7 @@ plugins=(
   docker docker-compose 
   git colored-man-pages colorize 
   macos nmap 
+  podman
   pip python 
   vagrant virtualenv 
   zsh-nvm 

@@ -19,13 +19,25 @@ if [[ -d /opt/homebrew ]]; then
     # node@14
     # export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
 fi
+
+
 # openssl PATH
 # using default - compiled from source /usr/local/bin/openssl
 #export PATH="/usr/local/opt/openssl@1.0/bin:$PATH"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 #export PATH="/usr/local/opt/openssl@3/bin:$PATH"
+#VMWare
+export PATH="${PATH}:/Applications/VMware Fusion.app/Contents/Library"
 # - JAVA
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home
+
+# Redhat Podman
+# https://www.redhat.com/sysadmin/run-containers-mac-podman
+export DOCKER_HOST='unix:///Users/vincentricci/.local/share/containers/podman/machine/qemu/podman.sock'
+
+# Localization for UTF-8 support
+# https://org.ngc.nvidia.com/setup/installers/cli
+export LC_ALL=en_US.UTF-8
 
 # - NVM:
 if [[ ! -d ${HOME}/.nvm ]]; then
@@ -142,10 +154,16 @@ plugins=(
   brew 
   docker docker-compose 
   git colored-man-pages colorize 
-  macos nmap 
+  gpg-agent
+  macos nmap
+  multipass 
+  kubectl
   podman
-  pip python 
-  vagrant virtualenv 
+  pip python
+  salt 
+  vagrant virtualenv
+  vim-interaction
+  vscode 
   zsh-nvm 
   zsh-autosuggestions
   zsh-syntax-highlighting

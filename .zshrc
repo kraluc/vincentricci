@@ -97,6 +97,7 @@ plugins=(
     podman
     pip python
     salt
+    ssh-agent
     vagrant 
     virtualenv
     vim-interaction

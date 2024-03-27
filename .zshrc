@@ -113,7 +113,7 @@ zstyle :omz:plugins:ssh-agent lifetime 4h
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
+source ~/.bash_aliases
 # remove write permission from groups and all permissions for others
 umask 0027
 

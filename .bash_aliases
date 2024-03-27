@@ -40,6 +40,7 @@ alias calorcdn="lftp calo:calo@172.18.108.26"
 alias cdp='cd ~/Documents/devlopment/PYTHON'
 alias cent7='ssh 10.201.255.63'
 alias cent9="ssh vricci@192.168.56.9"
+alias centos9="ssh vricci@172.16.17.9"
 alias cent="ssh vricci@172.16.31.8"
 alias centr="ssh admin@rtp-dcrs-centos8.cisco.com"
 alias chx='chmod +x'

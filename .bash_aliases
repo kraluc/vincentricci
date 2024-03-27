@@ -216,10 +216,8 @@ alias wolbgw101='ssh -l ansible 14.2.86.101'
 alias nat9k='ssh -l admin 10.122.164.121'
 alias natTx='ssh -l admin 10.122.164.73'
 alias natRx='ssh -l admin 10.122.164.79'
-<<<<<<< Updated upstream
 alias isi3k='ssh 192.168.128.5'
 alias ras='ssh -l vricci 192.168.10.223'
-=======
 alias smartr6="ssh -l admin rtp-dcrs-smart-v6.cisco.com"
 alias UC_FW='ssh 10.122.162.156'
 alias UC_Spine='ssh 10.122.162.181'
@@ -269,4 +267,3 @@ alias OIC_FX2='ssh -l admin 10.122.176.102'
 alias OIC_FX3='ssh -l admin 10.122.176.48'
 alias OIC_FX4='ssh -l admin 10.122.176.87'
 alias OIC_5K='ssh admin@10.122.176.24'
->>>>>>> Stashed changes
